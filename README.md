@@ -8,8 +8,8 @@ response teams. When your web server is compromised which steps would you
 initiate? What are your priorities if malware was executed on an endpoint and
 you shortly after identify data exfiltration to a remote server? Playing Cyber
 Against Humanity using the provided scenarios educate and train defenders and
-provide a basis for discussing different activities and its priorities. _How
-you would implement those activities in your infrastructure?_ Cyber Against
+provide a basis for discussing different activities and its priorities. _How 
+would you implement those activities in your infrastructure?_ Cyber Against
 Humanity uses well-known incident phases for the activity categories and focus
 on detecting and responding to cyber threats. 
 
