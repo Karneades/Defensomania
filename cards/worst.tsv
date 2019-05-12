@@ -1,0 +1,11 @@
+Phase	Activity	Source
+Prepare	Use public forum to share sensitive indicators of compromise	
+Detect	Search for private IP of attacker in network logs of compromised system	
+Respond	Forward suspicious email to ticketing system where different others have access too but do not say a word about your suspiciousness	
+Respond	Log into the compromised system with domain admin	
+Respond	Run unknown forensic tool you downloaded after quick search without verification on customer server	
+Respond	Let users of compromised systems search for the malware themselves	
+Recover	Return compromised system to user without any cleanup	
+Communication	Let the world know through your private blog that you're employer was hacked	
+Communication	Communicate on twitter that you was hacked before media department is informed	
+Lessons Learned	Lessons to learn? What? The way it is: close incident and move forward.	
