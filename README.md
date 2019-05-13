@@ -7,13 +7,13 @@ Cyber Against Humanity is a card game for security monitoring and incident
 response teams. When your web server is compromised which steps would you
 initiate? What are your priorities if malware was executed on an endpoint and
 you shortly after identify data exfiltration to a remote server? Playing Cyber
-Against Humanity using the provided scenarios educate and train defenders and
-provide a basis for discussing different activities and its priorities. _How 
-would you implement those activities in your infrastructure?_ Cyber Against
-Humanity uses well-known incident phases for the activity categories and focus
-on detecting and responding to cyber threats. 
+Against Humanity using the provided scenarios educates and trains defenders and
+provides a basis for discussing different activities and its priorities. _How 
+would you implement those activities in your environment?_ Cyber Against
+Humanity uses well-known incident phases for the activity categories and focuses
+on cyber threat detection and response.
 
-In short, each round, one player is the attacker and reads a scenario card. All
+Each round, one player is the attacker and reads a scenario card. All
 others are defenders and choose their best activity card. See section
 [gameplay](#gameplay) for the proposed game plays and rules.
 
@@ -61,14 +61,14 @@ adding more scenarios and activities](cards).
 
 ## Gameplay
 
-The proposed game plays depend on your goal (and mood) and what your team would
+The proposed gameplays depend on your goal and what your team would
 like to exercise and what the scope of the training is. Choose between the
 following modes:
 - Best card wins
 - Incident response process
 
 **Best card wins** lets you think about and discuss single activities and how
-they fit for a given scenario. The game play is inspired by Cards Against
+they fit for a given scenario. The gameplay is inspired by Cards Against
 Humanity.
   1. Put the scenario cards heads-down in the middle of the table.
   1. Each person draws ten activity cards (skip the _joker_ cards). The cards
@@ -78,12 +78,12 @@ Humanity.
   1. Each defender proposes the best activity by passing one activity
      card, face down, to the attacker.
      _Alternatively, instead of passing the card face down each defender
-     explains the proposed activity and also include the joker cards._
+     explains the proposed activity. If you want you can also include joker cards._
   1. The attacker shuffles all of the cards and shares all activities to the
      group. The attacker then picks the best activity card and whoever
      submitted it gets one defend point by getting the scenario card. Discuss
      the decision in respect to technical aspects and how you would implement
-     it in your infrastructure.
+     it in your environment.
      * Prepare: What should you have had implemented to be prepared for that
        scenario?
      * Detect: How would you have been able to identify the attack? How could
@@ -95,23 +95,23 @@ Humanity.
 
 **Incident response process** is a more in-depth way of dealing
 with one scenario and considers priorities and the whole incident response
-process. This gets now real serious. The goal is to see how the team would
+process. This is serious business now. The goal is to see how the team would
 handle a fictional scenario from the beginning to the end of an incident.
 Discuss the processes, the responsibilities, the tools, the priorities and
 also who would you contact in case of emergency. Ask questions like "if we
-have that incident, how should we prepare us to be able to handle it?", "if we
+have that incident, what preparation is needed to be able to handle it?", "if we
 must contain the compromised host how would we do that?". If you
 incorporate a new subsidiary company into your security monitoring and
 incident response scope, ask questions like how would you handle that scenario
 for the new company and its infrastructure.
   1. Put the scenario cards heads-down in the middle of the table.
   1. Group the activity cards heads-up according to their phases.
-  1. Someone in the group now takes the first scenario card, read it loud
+  1. Someone in the group now takes the first scenario card, reads it out loud
      and... good luck.
   1. Now spread out the activity cards for the first incident phase _prepare_
      around the table.
-  1. Each player after another takes one card from the current phase which one
-     think would fit that scenario and describes what steps and which tools
+  1. Each player in turn takes one card from the current phase which
+     fits that scenario and describes what steps and which tools
      are used to execute it. You should discuss the activities in the group and
      its priorities for the scenario. Move forward to the next card.
   1. After all relevant cards from a phase are played move on to the next phase.
