@@ -15,7 +15,7 @@ on cyber threat detection and response.
 
 Each round, one player is the attacker and reads a scenario card. All
 others are defenders and choose their best activity card. See section
-[gameplay](#gameplay) for the proposed game plays and rules.
+[gameplay](#gameplay) for the proposed gameplays and rules.
 
 Cyber Against Humanity is for security monitoring and incident response what
 ["Elevation of Privilege"
