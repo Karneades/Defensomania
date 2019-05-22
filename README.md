@@ -29,7 +29,23 @@ the spare time and scenarios are purely fictional._
 
 ## Download
 
-[Download Cyber Against Humanity as PDF](https://github.com/Karneades/CyberAgainstHumanity/raw/master/CyberAgainstHumanity.pdf).
+See [PDFs-to-print](PDFs-to-print) for different PDFs, either including both scenarios
+and activities or only one of them. Additionally, different layouts are used: 
+1, 6 or 9 cards per sheet. The [PDF using 6-cards-per-sheet with a crop
+line](https://github.com/Karneades/CyberAgainstHumanity/raw/master/PDFs-to-print/CyberAgainstHumanity-6-cards-per-sheet-with-croplines-front.pdf)
+or the [PDF using 9-cards-per-sheet without a crop
+line](https://github.com/Karneades/CyberAgainstHumanity/raw/master/PDFs-to-print/CyberAgainstHumanity-9-cards-per-sheet-without-croplines-front.pdf)
+are suitable for home printing and include all front cards. The
+9-cards-per-sheet PDF is a more compact version without the space around the
+cards known from standard playing cards. See [PNGs-to-print](PNGs-to-print)
+for all scenario and activity front and back PNG image files.
+
+1. **Print at home**. For easy printing use one of the PDFs which include
+   scenarios and activities.
+1. **Print at a local printshop or print via a commercial custom card
+   manufacturer**. The required files for printing varies between shops.
+   Sometimes PDFs which have 1 card per sheet are used and sometimes PNG image
+   files. Mostly front and back have to be provided separately. 
 
 ## Card Deck
 

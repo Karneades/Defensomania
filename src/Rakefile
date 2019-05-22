@@ -1,7 +1,107 @@
 require 'squib'
 
-task default: [:deck]
+task default: [:pdf6] # build pdf with 6 cards using crop lines for all front cards
 
-task :deck do
-  load 'deck.rb'
+task all: [:pdf1, :pdf6, :pdf9, \
+           :pdf1activity, :pdf1scenario, :pdf1_s_back, :pdf1_a_back, \
+           :pngfront, :png_s_back, :png_a_back ]
+
+task pdf1all: [:pdf1activity, :pdf1_a_back, :pdf1scenario, :pdf1_s_back]
+
+task png: [:pngfront, :png_s_back, :png_a_back ]
+
+task :pdf1 do
+    puts "=== Building pdf with 1 card per sheet for front ==="
+    ENV['SQUIB_BUILD'] = 'pdf1'
+    load 'deck.rb'
+end
+
+task :pdf1activity do
+    puts "=== Building pdf with 1 card per sheet for activity front ==="
+    ENV['SQUIB_BUILD'] = 'pdf1'
+    load 'activity-front.rb'
+end
+
+task :pdf1scenario do
+    puts "=== Building pdf with 1 card per sheet for scenario front ==="
+    ENV['SQUIB_BUILD'] = 'pdf1'
+    load 'scenario-front.rb'
+end
+
+task :pdf6 do
+    puts "=== Building pdf with 6 cards per sheet with crop lines for front ==="
+    ENV['SQUIB_BUILD'] = 'pdf6'
+    load 'deck.rb'
+end
+
+task :pdf6activity do
+    puts "=== Building pdf with 6 cards per sheet with crop lines for activity front ==="
+    ENV['SQUIB_BUILD'] = 'pdf6'
+    load 'activity-front.rb'
+end
+
+task :pdf6scenario do
+    puts "=== Building pdf with 6 cards per sheet with crop lines for scenario front ==="
+    ENV['SQUIB_BUILD'] = 'pdf6'
+    load 'scenario-front.rb'
+end
+
+task :pdf9 do
+    puts "=== Building pdf with 9 card per sheet for front ==="
+    ENV['SQUIB_BUILD'] = 'pdf9'
+    load 'deck.rb'
+end
+
+task :pdf9activity do
+    puts "=== Building pdf with 9 cards per sheet for activity front ==="
+    ENV['SQUIB_BUILD'] = 'pdf9'
+    load 'activity-front.rb'
+end
+
+task :pdf9scenario do
+    puts "=== Building pdf with 9 cards per sheet for scenario front ==="
+    ENV['SQUIB_BUILD'] = 'pdf9'
+    load 'scenario-front.rb'
+end
+
+task :pdf1_s_back do
+    puts "=== Building pdf for scenario back ==="
+    ENV['SQUIB_BUILD'] = 'pdf'
+    load 'scenario-back.rb'
+end
+
+task :pdf1_a_back do
+    puts "=== Building pdf for activity back ==="
+    ENV['SQUIB_BUILD'] = 'pdf'
+    load 'activity-back.rb'
+end
+
+task :pngfront do
+    puts "=== Building png files for each front card ==="
+    ENV['SQUIB_BUILD'] = 'png'
+    load 'deck.rb'
+end
+
+task :png_s_back do
+    puts "=== Building png for scenario back ==="
+    ENV['SQUIB_BUILD'] = 'png'
+    load 'scenario-back.rb'
+end
+
+task :png_a_back do
+    puts "=== Building png for activity back ==="
+    ENV['SQUIB_BUILD'] = 'png'
+    load 'activity-back.rb'
+end
+
+task :test do
+    puts "=== Building test png file for first card ==="
+    ENV['SQUIB_BUILD'] = 'test'
+    load 'deck.rb'
+end
+
+task :showcase do
+    puts "=== Building showcase and hand png files ==="
+    ENV['SQUIB_BUILD'] = 'showcase'
+    load 'deck.rb'
 end

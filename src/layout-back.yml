@@ -1,0 +1,36 @@
+title:
+  font: ChunkFive Roman,Sans 72
+  x: 90
+  y: 90
+  width: 635
+  height: 50
+  font_size: 12
+  align: center
+
+illustration:
+  font_size: 26
+  valign: middle
+  align: center
+  x: 75
+  y: 347.5
+  width: 675
+  height: 350
+
+# The "cut line", without rounded corners
+cut:
+  x: 0.125in
+  y: 0.125in
+  width: 2.5in
+  height: 3.5in
+  radius: 16
+
+copyright:
+  x: 75
+  y: 1025
+  width: 675
+  height: 25
+  font_size: 6
+  align: center
+  valign: bottom
+credits:
+  extends: copyright

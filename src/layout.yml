@@ -20,10 +20,10 @@ desc: # alias
 
 # The "cut line", without rounded corners
 cut:
-  x: 37.5
-  y: 37.5
-  width: 750
-  height: 1050
+  x: 0.125in
+  y: 0.125in
+  width: 2.5in
+  height: 3.5in
   radius: 16
 
 copyright:

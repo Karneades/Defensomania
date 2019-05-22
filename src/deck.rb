@@ -65,7 +65,7 @@ Squib::Deck.new cards: all_cards['Phase'].size, layout: layouts do
           "white"
       end
   }
-  background color: background_color
+  #background color: background_color
 
   text_color = all_cards['Phase'].map { |t|
       if scenario_color == 'black' && t == "Scenario" then
@@ -74,6 +74,9 @@ Squib::Deck.new cards: all_cards['Phase'].size, layout: layouts do
           "black"
       end
   }
+
+  rect layout: 'cut', fill_color: background_color
+
   text str: all_cards['Phase'], layout: 'title', color: text_color
   text str: all_cards['Activity'], layout: 'description', color: text_color
   text str: "Cyber Against Humanity", layout: 'credits', color: text_color
@@ -87,27 +90,30 @@ Squib::Deck.new cards: all_cards['Phase'].size, layout: layouts do
   }, layout: 'illustration'
 
   build :showcase do
-    rect layout: 'cut'
     showcase file: 'showcase.png', dir: '../img/', range: position_each_category
-  end
-
-  build :hand do
-    rect layout: 'cut'
     hand file: 'hand.png', dir: '../img/', range: position_each_category, trim: 30, trim_radius: 10, angle_range: -1.4..1.2
   end
 
   build :png do
-    save_png
+      save_png dir: '../PNGs-to-print/'
   end
 
-  pdf_name = 'CyberAgainstHumanity.pdf'
-  build :pdf do
-    rect layout: 'cut'
-    save_pdf file: pdf_name, dir: '../' #, sprue: 'a4_poker_card_8up.yml'
+  pdf_name = 'CyberAgainstHumanity-1-card-per-sheet-front.pdf'
+  build :pdf1 do
+      save_pdf file: pdf_name, dir: '../PDFs-to-print/' , sprue: 'drivethrucards_1up.yml'
+  end
+
+  build :pdf6 do
+    pdf_name = 'CyberAgainstHumanity-6-cards-per-sheet-with-croplines-front.pdf'
+    save_pdf file: pdf_name, dir: '../PDFs-to-print/'
+  end
+
+  pdf_name = 'CyberAgainstHumanity-9-cards-per-sheet-without-croplines-front.pdf'
+  build :pdf9 do
+    save_pdf file: pdf_name, dir: '../PDFs-to-print/' , sprue: 'letter_poker_card_9up.yml'
   end
 
   build :test do
-    rect layout: 'cut'
     save_png range: 0
   end
 end
