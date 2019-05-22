@@ -4,8 +4,8 @@ Prepare	Implement a central log management system
 Prepare	Implement event and alert management system for effective first triage	
 Prepare	Implement case management system for effective incident handling	
 Prepare	Implement automation and orchestration to support analysts during first triage and incident investigations	
-Prepare	Implement detection use cases to cover the needed scope	
-Prepare	Build know-how for new threats and provide needed trainings to analysts	
+Prepare	Implement detection use cases to cover the required scope	
+Prepare	Build know-how for new threats and provide trainings to analysts	
 Prepare	Establish visibility into all critical assets and platform	
 Prepare	Ensure central log collection for relevant logs on systems in monitoring and incident response scope	
 Prepare	Deploy remote forensics software	
