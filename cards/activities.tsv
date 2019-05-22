@@ -4,8 +4,8 @@ Prepare	Implement a central log management system
 Prepare	Implement event and alert management system for effective first triage	
 Prepare	Implement case management system for effective incident handling	
 Prepare	Implement automation and orchestration to support analysts during first triage and incident investigations	
-Prepare	Impelement detection use cases to cover the needed scope	
-Prepare	Build knowhow for new threats and provide needed trainings to analysts	
+Prepare	Implement detection use cases to cover the needed scope	
+Prepare	Build know-how for new threats and provide needed trainings to analysts	
 Prepare	Establish visibility into all critical assets and platform	
 Prepare	Ensure central log collection for relevant logs on systems in monitoring and incident response scope	
 Prepare	Deploy remote forensics software	
@@ -26,16 +26,16 @@ Prepare	Joker - invent a new preparation step
 Prepare	Joker - invent a new preparation step	
 Prepare	Joker - invent a new preparation step	
 Detect	Search for email attributes inside all of your mailboxes	
-Detect	Search for cron jobs on linux server	
-Detect	Search for config settings on remote system	
-Detect	Search for malicious config changes on remote system	
+Detect	Search for cron jobs on Linux server	
+Detect	Search for configuration settings on remote system	
+Detect	Search for malicious configuration changes on remote system	
 Detect	Search for processes on a remote host	
 Detect	Search for files on a remote host	
 Detect	Search for file hash on a remote host	
 Detect	Search for destination IPs in network logs	
 Detect	Search for source IPs in your network logs	
 Detect	Search for domains in your network logs	
-Detect	Search for referer in your network logs	
+Detect	Search for referrer in your network logs	
 Detect	Search for user agent in your network logs	
 Detect	Search for URL in your network logs	
 Detect	Search for leaked data in public search engines and paste sites	
@@ -45,14 +45,13 @@ Detect	Detect leaked sensitive information on public source code repository
 Detect	Detect lateral movement with pipes	
 Detect	Detect lateral movement with local admin	
 Detect	Detect lateral movement with credential abuse	
-Detect	Run Yara scan on remote host to find malware	
-Detect	Run in-memory malware detection on remote host	
 Detect	Detect malicious process injection	
 Detect	Detect leaked information through active cybercrime forum monitoring	
-Detect	Check GDPR relevance for current incident	
 Detect	Detect unauthorized access on remote system	
-Detect	Detect unkown domain admininistrator in your user management	
-Detect	Detect unkown local admininistrator account on compromised system	
+Detect	Detect unknown domain administrator in your user management	
+Detect	Detect unknown local administrator account on compromised system	
+Detect	Detect in-memory malware on remote host	
+Detect	Check GDPR relevance	
 Detect	Find attacker through attacker's real IP which leaked because of bad op-sec	
 Detect	Joker - invent a new detection method	
 Detect	Joker - invent a new detection method	
@@ -83,7 +82,7 @@ Respond	Take remote system offline
 Respond	Disable network connectivity on remote system	
 Respond	Delete malicious emails in employees mailboxes	
 Respond	Sinkhole C2 server	
-Respond	Capture traffic to a C2 server	
+Respond	Capture traffic to C2 server	
 Respond	Force password reset	
 Respond	Add evidence to long time storage	
 Respond	Mitigate a DDoS attack	
@@ -108,7 +107,7 @@ Recover	Joker - invent a new recover action
 Recover	Joker - invent a new recover action	
 Recover	Joker - invent a new recover action	
 Lessons Learned	Organize and perform lessons learned meeting	
-Lessons Learned	Define technical depts and report them accordingly	
+Lessons Learned	Define technical debts and report them accordingly	
 Lessons Learned	Document results and new knowledge for the team and company	
 Lessons Learned	Improve incident response processes	
 Lessons Learned	Improve incident detection capabilities	
