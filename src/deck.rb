@@ -100,7 +100,7 @@ Squib::Deck.new cards: all_cards['Phase'].size, layout: layouts do
 
   pdf_name = 'CyberAgainstHumanity-1-card-per-sheet-front.pdf'
   build :pdf1 do
-      save_pdf file: pdf_name, dir: '../PDFs-to-print/' , sprue: 'drivethrucards_1up.yml'
+      save_pdf file: pdf_name, dir: '../PDFs-to-print/', sprue: 'drivethrucards_1up.yml'
   end
 
   build :pdf6 do
@@ -114,6 +114,6 @@ Squib::Deck.new cards: all_cards['Phase'].size, layout: layouts do
   end
 
   build :test do
-    save_png range: 0
+    save_png range: 0, sprue: 'drivethrucards_1up.yml'
   end
 end

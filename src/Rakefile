@@ -100,6 +100,30 @@ task :test do
     load 'deck.rb'
 end
 
+task :testAback do
+    puts "=== Building test png file for first activity back card ==="
+    ENV['SQUIB_BUILD'] = 'test'
+    load 'activity-back.rb'
+end
+
+task :testAfront do
+    puts "=== Building test png file for first activity fron card ==="
+    ENV['SQUIB_BUILD'] = 'test'
+    load 'activity-front.rb'
+end
+
+task :testSback do
+    puts "=== Building test png file for first scenario back card ==="
+    ENV['SQUIB_BUILD'] = 'test'
+    load 'scenario-back.rb'
+end
+
+task :testSfront do
+    puts "=== Building test png file for first scenario front card ==="
+    ENV['SQUIB_BUILD'] = 'test'
+    load 'scenario-front.rb'
+end
+
 task :showcase do
     puts "=== Building showcase and hand png files ==="
     ENV['SQUIB_BUILD'] = 'showcase'

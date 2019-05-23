@@ -17,4 +17,8 @@ Squib::Deck.new cards: 1, layout: layouts do
   build :pdf do
       save_pdf file: pdf_name, dir: '../PDFs-to-print/' , sprue: 'drivethrucards_1up.yml'
   end
+
+  build :test do
+      save_png range: 0, sprue: 'drivethrucards_1up.yml'
+  end
 end
