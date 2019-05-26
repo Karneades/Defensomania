@@ -8,36 +8,48 @@ for more information on how to install Squib.
 
 Change to the `src` directory and run the following commands as needed.
 
-Build test card (_\_output/card_00.png_)
+Build test card (_\_output/card_00.png_). The test PNG file includes the cut
+line and a red line which indicates the safe zone.
 
 ``` ruby
-rake test
+rake test_png
 ```
 
-Build a PDF including all front cards (_../PDFs-to-print/*_). Set `scenario_color` to _white_ or _black_ in the source file.
+Build a PDF which will include all front cards (_../PDFs-to-print/*_). Set `scenario_color` to _white_ or _black_ in the source file.
 
 ``` ruby
-# use default job pdf6 - 6-cards-per-sheet using all front cards
+# build a PDF with 9-cards-per-sheet without bleed
 rake
+rake pdf6all
 
-# build PDF with 1-card-per-sheet
-rake pdf1
-# build PDF with 6-card-per-sheet with crop lines
-rake pdf6
-# build PDF with 9-card-per-sheet 
-rake pdf6
+# build PDF with 1-card-per-sheet with bleed
+rake pdf1all
+
+# build PDF with 6-card-per-sheet with crop lines and with bleed
+rake pdf6all
 ```
 
-Build dedicated PDF for activities and scenarios and for front and back using **1-card-per-sheet** (_../PDFs-to-print/*_). Set `scenario_color` to _white_ or _black_ in the source file.
+Build dedicated PDFs for activities and for scenarios front cards and PDFs for front and back using **1-card-per-sheet** and with bleed (_../PDFs-to-print/*_). Set `scenario_color` to _white_ or _black_ in the source file.
 
 ``` ruby
 rake pdf1all
+
+# the following rake tasks will then be executed
+rake pdf1activity
+rake pdf1activity_back
+rake pdf1scenario
+rake pdf1scenario_back
 ```
 
-Build PNG files for each front and back card (_../PNGs-to-print/*_)
+Build PNG files for each front and back card with bleed (_../PNGs-to-print/*_)
 
 ``` ruby
 rake png
+
+# the following rake tasks will then be executed
+rake pngfront
+rake png_scenario_back
+rake png_activity_back
 ```
 
 Build showcase (_../img/showcase.png_ and _../img/hand.png_)
@@ -68,11 +80,11 @@ $ SQUIB_BUILD=pdf6 ruby worst_deck.rb
 Build PNG files for each scenario card (_../PNGs-to-print/*_)
 
 ``` ruby
-$ SQUIB_BUILD=png ruby scenario_deck.rb 
+$ SQUIB_BUILD=png ruby scenario_front.rb 
 ```
 
 Build PNG files for each activities card (_../PNGs-to-print/*_)
 
 ``` ruby
-$ SQUIB_BUILD=png ruby activity_deck.rb 
+$ SQUIB_BUILD=png ruby activity_front.rb 
 ```

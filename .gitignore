@@ -1,3 +1,4 @@
+.rake_tasks~
 *.swp
 src/_output/*.png
 src/_output/*.pdf

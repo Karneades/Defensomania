@@ -7,7 +7,7 @@ all_cards = activities
 all_cards['Phase'] += scenarios['Phase']
 all_cards['Activity'] += scenarios['Activity']
 
-layouts = 'layout.yml'
+layouts = 'layout-front.yml'
 
 # Calculate location in cards for each phase for showcase
 cnt = 0
@@ -65,7 +65,7 @@ Squib::Deck.new cards: all_cards['Phase'].size, layout: layouts do
           "white"
       end
   }
-  #background color: background_color
+  background color: background_color
 
   text_color = all_cards['Phase'].map { |t|
       if scenario_color == 'black' && t == "Scenario" then
@@ -74,8 +74,6 @@ Squib::Deck.new cards: all_cards['Phase'].size, layout: layouts do
           "black"
       end
   }
-
-  rect layout: 'cut', fill_color: background_color
 
   text str: all_cards['Phase'], layout: 'title', color: text_color
   text str: all_cards['Activity'], layout: 'description', color: text_color
@@ -94,26 +92,40 @@ Squib::Deck.new cards: all_cards['Phase'].size, layout: layouts do
     hand file: 'hand.png', dir: '../img/', range: position_each_category, trim: 30, trim_radius: 10, angle_range: -1.4..1.2
   end
 
+  # with bleed
   build :png do
       save_png dir: '../PNGs-to-print/'
   end
 
-  pdf_name = 'CyberAgainstHumanity-1-card-per-sheet-front.pdf'
   build :pdf1 do
-      save_pdf file: pdf_name, dir: '../PDFs-to-print/', sprue: 'drivethrucards_1up.yml'
+      pdf_name = 'CyberAgainstHumanity-1-card-per-sheet-all-front-with-bleed.pdf'
+      save_pdf file: pdf_name, dir: '../PDFs-to-print/', \
+          sprue: 'sprue-1up-with-bleed.yml', trim_radius: 0
   end
 
   build :pdf6 do
-    pdf_name = 'CyberAgainstHumanity-6-cards-per-sheet-with-croplines-front.pdf'
-    save_pdf file: pdf_name, dir: '../PDFs-to-print/'
+    pdf_name = 'CyberAgainstHumanity-6-cards-per-sheet-all-front-with-croplines-and-bleed.pdf'
+    rect layout: 'cut', stroke_color: text_color, radius: 16
+    save_pdf file: pdf_name, dir: '../PDFs-to-print/', radius: 38
   end
 
-  pdf_name = 'CyberAgainstHumanity-9-cards-per-sheet-without-croplines-front.pdf'
   build :pdf9 do
-    save_pdf file: pdf_name, dir: '../PDFs-to-print/' , sprue: 'letter_poker_card_9up.yml'
+    pdf_name = 'CyberAgainstHumanity-9-cards-per-sheet-all-front-without-bleed.pdf'
+    rect layout: 'cut', stroke_color: text_color, radius: 0
+    save_pdf file: pdf_name, dir: '../PDFs-to-print/', \
+        sprue: 'letter_poker_card_9up.yml', trim: '0.125in', trim_radius: 0
   end
 
-  build :test do
-    save_png range: 0, sprue: 'drivethrucards_1up.yml'
+  pdf_name = 'all-front-test.pdf'
+  build :pdf1test do
+      rect layout: 'safe', stroke_color: :red
+      rect layout: 'cut', stroke_color: text_color, radius: 0
+      save_pdf file: pdf_name, trim_radius: 0, sprue: 'sprue-1up-with-bleed.yml'
+  end
+
+  build :pngtest do
+      rect layout: 'cut', stroke_color: text_color, radius: 0
+      rect layout: 'safe', stroke_color: :red
+      save_png range: 0, sprue: 'sprue-1up-with-bleed.yml', trim_radius: 0
   end
 end

@@ -16,17 +16,9 @@ illustration:
   width: 675
   height: 350
 
-# The "cut line", without rounded corners
-cut:
-  x: 0.125in
-  y: 0.125in
-  width: 2.5in
-  height: 3.5in
-  radius: 16
-
 copyright:
   x: 75
-  y: 1025
+  y: 1000
   width: 675
   height: 25
   font_size: 7
@@ -34,3 +26,17 @@ copyright:
   valign: bottom
 credits:
   extends: copyright
+
+cut:
+  x: 0.125in
+  y: 0.125in
+  width: 2.5in
+  height: 3.5in
+  radius: 0
+
+safe:
+  x: 75
+  y: 75
+  width: 675
+  height: 975
+  radius: 0
