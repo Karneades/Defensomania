@@ -8,6 +8,15 @@ for more information on how to install Squib.
 
 Change to the `src` directory and run the following commands as needed.
 
+See which rake tasks are defined
+
+```
+rake -T
+rake -T png
+rake -T pdf
+rake -T test
+```
+
 Build test card (_\_output/card_00.png_). The test PNG file includes the cut
 line and a red line which indicates the safe zone.
 
