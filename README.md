@@ -1,30 +1,30 @@
 <p align="center">
   <img src="img/hand.png" width="750px">
 
-# Cyber Against Humanity
+# Defensomania
 
-Cyber Against Humanity is a card game for security monitoring and incident
+Defensomania is a card game for security monitoring and incident
 response teams. When your web server is compromised which steps would you
 initiate? What are your priorities if malware was executed on an endpoint and
-you shortly after identify data exfiltration to a remote server? Playing Cyber
-Against Humanity using the provided scenarios educates and trains defenders and
+you shortly after identify data exfiltration to a remote server? Playing 
+Defensomania using the provided scenarios educates and trains defenders and
 provides a basis for discussing different activities and their priorities. _How 
-would you implement those activities in your environment?_ Cyber Against
-Humanity uses well-known incident phases for the activity categories and focuses
-on cyber threat detection and response.
+would you implement those activities in your environment?_ Defensomania uses
+well-known incident phases for the activity categories and focuses on cyber
+threat detection and response.
 
 Each round, one player is the attacker and reads a scenario card. All
 others are defenders and choose their best activity card. See section
 [gameplay](#gameplay) for the proposed gameplays and rules.
 
-Cyber Against Humanity is for security monitoring and incident response what
+Defensomania is for security monitoring and incident response what
 ["Elevation of Privilege"
 (EoP)](https://www.microsoft.com/en-us/download/details.aspx?id=20303) is for
 threat modeling or
 [Cornucopia](https://www.owasp.org/index.php/OWASP_Cornucopia) is for web
 application security.
 
-_**Disclaimer:** Cyber Against Humanity is a personal project developed in 
+_**Disclaimer:** Defensomania is a personal project developed in 
 the spare time and scenarios are purely fictional._
 
 ## Download
@@ -33,7 +33,7 @@ See [PDFs-to-print](PDFs-to-print) for different PDFs, either including both
 scenarios and activities or only one of them. Additionally, different layouts
 are used: 1, 6 or 9 cards per sheet. The [PDF for all front cards using
 9-cards-per-sheet without crop lines and without
-bleed](https://github.com/Karneades/CyberAgainstHumanity/raw/master/PDFs-to-print/CyberAgainstHumanity-9-cards-per-sheet-all-front-without-bleed.pdf)
+bleed](https://github.com/Karneades/Defensomania/raw/master/PDFs-to-print/Defensomania-9-cards-per-sheet-all-front-without-bleed.pdf)
 is suitable for home printing.
 
 See [PNGs-to-print](PNGs-to-print) for all scenario and activity front and back
@@ -51,10 +51,10 @@ PNG image files.
 
 ## Card Deck
 
-Cyber Against Humanity uses two types of cards: 
+Defensomania uses two types of cards: 
 [scenarios](cards/scenarios.tsv) and [activities](cards/activities.tsv). The
 scenario cards describe fictional security incidents and the activity cards
-describe activities used to handle these incidents. See column `Source` in the
+describe activities used to handle these incidents. See column _Source_ in the
 [cards](cards) for external content attribution.
 
 The activity cards are categorized based on the following well-known incident
@@ -86,8 +86,7 @@ following modes:
 - Incident response process
 
 **Best card wins** lets you think about and discuss single activities and how
-they fit for a given scenario. The gameplay is inspired by Cards Against
-Humanity.
+they fit for a given scenario.
   1. Put the scenario cards heads-down in the middle of the table.
   1. Each person draws ten activity cards (skip the _joker_ cards). The cards
      should only be visible to each player.
@@ -139,9 +138,9 @@ for the new company and its infrastructure.
 Consider adding [scenarios and activities](cards), improve wording and rule
 descriptions or improve the layout and design.
 
-## Build your own Cyber Against Humanity
+## Build your own Defensomania
 
-Build your own Cyber Against Humanity card deck using [Squib](https://github.com/andymeneely/squib) and the [instructions](BUILD.md).
+Build your own Defensomania card deck using [Squib](https://github.com/andymeneely/squib) and the [instructions](BUILD.md).
 
 ## Ideas
 
@@ -171,14 +170,12 @@ PowerShell commands called _PowerShell Against Humanity_? Now you're scared!
   deck building!
 * Thanks to [BadThingsDaily](https://twitter.com/badthingsdaily) for tweeting
   about fictional tabletop scenarios and giving me permission to use them. They
-  have the attribution in the `Source` column in the
+  have the attribution in the _Source_ column in the
   [scenarios](cards/scenarios.tsv) file.
 * Thanks to [droe](https://github.com/droe) for various inputs and
   improvements during game development.
 * [Elevation of Privilege (EOP) by Microsoft](https://web.archive.org/web/20150312215303/http://www.microsoft.com/security/sdl/adopt/eop.aspx) ([Card Deck](https://www.microsoft.com/en-us/download/details.aspx?id=20303)): EoP is based on Microsoft's threat modeling framework "STRIDE" (Spoofing, Tampering, ...).
 * [Cornucopia](https://www.owasp.org/index.php/OWASP_Cornucopia) ([Card Deck](https://www.owasp.org/images/7/71/Owasp-cornucopia-ecommerce_website.pdf)): Cornucopia is based on OWASP's Top 10 (authentication, data Validation, ...).
-* [Cards Against Humanity](https://CardsAgainstHumanity.com) and Apples to
-    Apples for gameplay and design ideas.
 
 ## Artwork
 
@@ -195,7 +192,7 @@ underlying source code used to format and display that content is licensed
 under the [MIT
 license](https://github.com/github/choosealicense.com/blob/gh-pages/LICENSE.md).
 
-Cyber Against Humanity is free to use. It is licensed under the Creative
+Defensomania is free to use. It is licensed under the Creative
 Commons Attribution-ShareAlike 4.0 license, so you can copy,
 distribute and transmit the work, and you can adapt it, and use it
 commercially, but all provided that you attribute the work and if you alter,

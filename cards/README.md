@@ -1,6 +1,6 @@
-# Cyber Against Humanity Card Set
+# Defensomania Card Set
 
-Cyber Against Humanity uses two types of cards:
+Defensomania uses two types of cards:
 [activities](activities.tsv) and [scenarios](scenarios.tsv). The source files
 are tab-delimited and include a phase, activity and source column. The
 scenario cards describe fictional security incidents and the activity cards
@@ -39,4 +39,4 @@ you're scared!
 
 ## Build
 
-Build your own Cyber Against Humanity card deck using [Squib](https://github.com/andymeneely/squib) and the [instructions](../BUILD.md).
+Build your own Defensomania card deck using [Squib](https://github.com/andymeneely/squib) and the [instructions](../BUILD.md).

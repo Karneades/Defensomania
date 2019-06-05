@@ -79,7 +79,7 @@ Squib::Deck.new cards: all_cards_worst['Phase'].size, layout: layouts do
 
   text str: all_cards_worst['Phase'], layout: 'title', color: text_color
   text str: all_cards_worst['Activity'], layout: 'description', color: text_color
-  text str: "Cyber Against Humanity", layout: 'credits', color: text_color
+  text str: "Defensomania", layout: 'credits', color: text_color
 
   svg file: all_cards_worst['Phase'].map { |t|
       if scenario_color == 'black' && t == "Scenario" then
@@ -93,7 +93,7 @@ Squib::Deck.new cards: all_cards_worst['Phase'].size, layout: layouts do
     save_png
   end
 
-  pdf_name = 'CyberAgainstHumanity-WorstResponsePack-6-cards-per-sheet-with-croplines-front.pdf'
+  pdf_name = 'Defensomania-WorstResponsePack-6-cards-per-sheet-with-croplines-front.pdf'
   build :pdf6 do
     save_pdf file: pdf_name, dir: '../PDFs-to-print/' #, sprue: 'a4_poker_card_8up.yml'
   end

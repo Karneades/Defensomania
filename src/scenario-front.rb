@@ -31,7 +31,7 @@ Squib::Deck.new cards: scenarios['Phase'].size, layout: layouts do
 
   text str: scenarios['Phase'], layout: 'title', color: text_color
   text str: scenarios['Activity'], layout: 'description', color: text_color
-  text str: "Cyber Against Humanity", layout: 'credits', color: text_color
+  text str: "Defensomania", layout: 'credits', color: text_color
 
   svg file: scenarios['Phase'].map { |t|
       if scenario_color == 'black' && t == "Scenario" then
@@ -45,18 +45,18 @@ Squib::Deck.new cards: scenarios['Phase'].size, layout: layouts do
       save_png dir: '../PNGs-to-print/'
   end
 
-  pdf_name = 'CyberAgainstHumanity-1-card-per-sheet-scenario-front-with-bleed.pdf'
+  pdf_name = 'Defensomania-1-card-per-sheet-scenario-front-with-bleed.pdf'
   build :pdf1 do
       save_pdf file: pdf_name, dir: '../PDFs-to-print/', trim_radius: 0, sprue: 'sprue-1up-with-bleed.yml'
   end
 
-  pdf_name = 'CyberAgainstHumanity-6-cards-per-sheet-scenario-front-with-croplines-and-bleed.pdf'
+  pdf_name = 'Defensomania-6-cards-per-sheet-scenario-front-with-croplines-and-bleed.pdf'
   build :pdf6 do
     rect layout: 'cut', stroke_color: :white, radius: 0
     save_pdf file: pdf_name, dir: '../PDFs-to-print'
   end
 
-  pdf_name = 'CyberAgainstHumanity-9-cards-per-sheet-scenario-front-without-bleed.pdf'
+  pdf_name = 'Defensomania-9-cards-per-sheet-scenario-front-without-bleed.pdf'
   build :pdf9 do
     rect layout: 'cut', stroke_color: :white, radius: 0
     save_pdf file: pdf_name, dir: '../PDFs-to-print' , sprue: 'letter_poker_card_9up.yml', trim: '0.125in', trim_radius: 0

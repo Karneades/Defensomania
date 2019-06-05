@@ -1,4 +1,4 @@
-# Build your own Cyber Against Humanity
+# Build your own Defensomania
 
 Generate your own card deck based on the list of [activities and
 scenarios](cards). [Squib](https://github.com/andymeneely/squib) is used for
