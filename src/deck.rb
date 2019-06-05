@@ -88,8 +88,9 @@ Squib::Deck.new cards: all_cards['Phase'].size, layout: layouts do
   }, layout: 'illustration'
 
   build :showcase do
-    showcase file: 'showcase.png', dir: '../img/', range: position_each_category
-    hand file: 'hand.png', dir: '../img/', range: position_each_category, trim: 30, trim_radius: 10, angle_range: -1.4..1.2
+    rect layout: 'cut', stroke_color: text_color, radius: 16
+    showcase file: 'showcase.png', dir: '../img/', range: position_each_category, trim: 37.5, trim_radius: 16
+    hand file: 'hand.png', dir: '../img/', range: position_each_category, trim: 37.5, trim_radius: 16, angle_range: -1.4..1.2
   end
 
   # with bleed
