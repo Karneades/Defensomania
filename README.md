@@ -3,15 +3,16 @@
 
 # Defensomania
 
-Defensomania is a card game for security monitoring and incident
-response teams. When your web server is compromised which steps would you
-initiate? What are your priorities if malware was executed on an endpoint and
-you shortly after identify data exfiltration to a remote server? Playing 
-Defensomania using the provided scenarios educates and trains defenders and
-provides a basis for discussing different activities and their priorities. _How 
-would you implement those activities in your environment?_ Defensomania uses
-well-known incident phases for the activity categories and focuses on cyber
-threat detection and response.
+Defensomania (formerly known as _Cyber Against Humanity_) is a card game for
+security monitoring and incident response teams. When your web server is
+compromised which steps would you initiate? What are your priorities if
+malware was executed on an endpoint and you shortly after identify data
+exfiltration to a remote server? Playing Defensomania using the provided
+scenarios educates and trains defenders and provides a basis for discussing
+different activities and their priorities. _How would you implement those
+activities in your environment?_ Defensomania uses well-known incident phases
+for the activity categories and focuses on cyber threat detection and
+response.
 
 Each round, one player is the attacker and reads a scenario card. All
 others are defenders and choose their best activity card. See section
