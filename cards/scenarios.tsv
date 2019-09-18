@@ -33,7 +33,7 @@ Scenario	Joker - be evil and invent a new nightmare and worst case scenario. Wha
 Scenario	A developer has just typo'd an upstream package installation to their laptop. There was a malicious package waiting for that typo and post-installation code is exfiltrating data.	https://twitter.com/badthingsdaily
 Scenario	An engineer has typo'd a package they are adding to a product repository. It is malicious. The CI/CD and prod environment variables are exfiltrated to a C&C	https://twitter.com/badthingsdaily
 Scenario	A malicious browser extension was installed on different corporate computers. It injects keyloggers into websites.	
-Scenario	Your build imports from an employee's personal NPM package. They quit, and vandalize the package, causing a public incident.	https://twitter.com/badthingsdaily
+Scenario	Your software build imports from an employee's personal NPM package. The employee quits and vandalizes the package, causing a public incident.	https://twitter.com/badthingsdaily
 Scenario	An adversary takes control of your MDM service account. Your MDM support team cannot be reached for account recovery.	https://twitter.com/badthingsdaily
 Scenario	Your DNS was modified to respond with an attacker's DKIM key. Spearphishes will be signed by your domain in 30 minutes.	https://twitter.com/badthingsdaily
 Scenario	The certificates involved with your primary code signing process have been compromised and used to sign malicious apps.	
