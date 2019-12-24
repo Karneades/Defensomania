@@ -16,7 +16,7 @@ Scenario	A domain admin has run a malicious attachment after loudly proclaiming 
 Scenario	Security company has released an APT group PDF at BH USA. The list of IOCs includes a host in your ASN.	https://twitter.com/badthingsdaily
 Scenario	Every night new corporate accounts are abused for sending spam.	
 Scenario	Email infrastructure got compromised. Attackers have full access to your mailboxes.	
-Scenario	Attackers got domain admin in your environment. What should you scary more? Backdoor accounts or the sudden activation of disk encryption software?	
+Scenario	Attackers got domain admin in your environment. Backdoor accounts were created and disk encryption software was activated?	
 Scenario	An adversary has access to your Jenkins server.	https://twitter.com/badthingsdaily
 Scenario	An adversary has access to your vulnerable Jenkins server. Jenkins jobs with credentials are visible to everyone.	
 Scenario	Someone is impersonating you to customer support at one of your service provider.	https://twitter.com/badthingsdaily
