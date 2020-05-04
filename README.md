@@ -26,7 +26,7 @@ threat modeling or
 application security.
 
 _**Disclaimer:** Defensomania is a personal project developed in 
-the spare time and scenarios are purely fictional._
+the spare time and scenarios are purely fictional or related to external writeups._
 
 ## Download
 
