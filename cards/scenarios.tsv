@@ -41,3 +41,5 @@ Scenario	An employee has left a firewall rule wide open after several hours of t
 Scenario	An employee has left a firewall rule wide open after a faulty change request was implemented. Bruteforcing attempts were registred on previously protected servers.	
 Scenario	You allow customers to upload sensitive information to your platform to share them with others. However, the data was left unprotected and anyone could access and download the content.	
 Scenario	You were informed that one of your website directories used to share files with external parties were accessible and writable by any anonymous user. Suspicious files were found.	https://krebsonsecurity.com/2019/05/whats-behind-the-wolters-kluwer-tax-outage/
+Scenario	You were informed that your MDM solution was compromised and over 75% of your employee's mobile devices are infected with malware.	https://research.checkpoint.com/2020/mobile-as-attack-vector-using-mdm/
+Scenario	You were informed that your firewalls were compromised and malware was executed on these devices to steal information.	https://news.sophos.com/en-us/2020/04/26/asnarok/

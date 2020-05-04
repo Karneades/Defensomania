@@ -17,6 +17,12 @@ rake -T pdf
 rake -T test
 ```
 
+To rule them all
+
+```
+rake all
+```
+
 Build test card (_\_output/card_00.png_). The test PNG file includes the cut
 line and a red line which indicates the safe zone.
 
