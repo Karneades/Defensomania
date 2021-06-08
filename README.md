@@ -3,8 +3,8 @@
 
 # Defensomania
 
-Defensomania (formerly known as _Cyber Against Humanity_) is a card game for
-security monitoring and incident response teams. When your web server is
+Defensomania (formerly known as _Cyber Against Humanity_) is an 
+incident response card game. When your web server is
 compromised which steps would you initiate? What are your priorities if
 malware was executed on an endpoint and you shortly after identify data
 exfiltration to a remote server? Playing Defensomania using the provided
