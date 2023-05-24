@@ -51,6 +51,9 @@ PNG image files.
 
 ## Card Deck
 
+__Future versions of Defensomania will use ATT&CK for additional attack events during the game
+and RE&CT for the activity cards instead of an internal IR activity list.__
+  
 Defensomania uses two types of cards: 
 [scenarios](cards/scenarios.tsv) and [activities](cards/activities.tsv). The
 scenario cards describe fictional security incidents and the activity cards
