@@ -32,9 +32,8 @@ the spare time and scenarios are purely fictional or related to external writeup
 
 See [PDFs-to-print](PDFs-to-print) for different PDFs, either including both
 scenarios and activities or only one of them. Additionally, different layouts
-are used: 1, 6 or 9 cards per sheet. The [PDF for all front cards using
-9-cards-per-sheet without crop lines and without
-bleed](https://github.com/Karneades/Defensomania/raw/master/PDFs-to-print/Defensomania-9-cards-per-sheet-all-front-without-bleed.pdf)
+are used: 1, 6 or 9 cards per sheet. The [PDF for with all front cards using
+9 cards per sheet](https://github.com/Karneades/Defensomania/raw/master/PDFs-to-print/Defensomania-9-cards-per-sheet-all-front-without-bleed.pdf)
 is suitable for home printing.
 
 See [PNGs-to-print](PNGs-to-print) for all scenario and activity front and back
