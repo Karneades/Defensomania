@@ -161,7 +161,7 @@ PowerShell commands called _PowerShell Against Humanity_? Now you're scared!
 
 ## Acknowledgement & Inspiration
 
-* Thanks to my employer [Swisscom](https://www.swisscom.ch)
+* Thanks to my previous employer [Swisscom](https://www.swisscom.ch)
  ([Github](https://github.com/swisscom)) for allowing me to publish the
  project which was inspired by my work at the
  [@swisscom_csirt](https://twitter.com/swisscom_csirt).
