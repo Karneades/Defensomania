@@ -53,6 +53,7 @@ Detect	Detect unknown local administrator account on compromised system
 Detect	Detect in-memory malware on remote host	
 Detect	Check GDPR relevance	
 Detect	Find attacker through attacker's real IP which leaked because of bad op-sec	
+Detect	Correlate application grants, service principal activity and mailbox audit events to distinguish delegated access from normal user sign-ins.	Hiago Kin Levi
 Detect	Joker - invent a new detection method	
 Detect	Joker - invent a new detection method	
 Detect	Joker - invent a new detection method	
@@ -90,6 +91,7 @@ Respond	Initiate hot patching or immediate fix of exploited vulnerability
 Respond	Create a GDPR notification	
 Respond	Document indicators of attack and indicators of compromise centrally.	
 Respond	Share indicators of attack and of compromise with the community	
+Respond	Revoke the malicious application's grant and relevant sessions, recording identifiers and audit evidence as urgency permits; validate that access stops.	Hiago Kin Levi
 Respond	Joker - invent a new respond action	
 Respond	Joker - invent a new respond action	
 Respond	Joker - invent a new respond action	
@@ -103,6 +105,7 @@ Recover	Rotate API keys for a compromised account
 Recover	Change credentials for a compromised service account which was disabled during the incident	
 Recover	Implement long term monitoring through new security monitoring use cases and incident response processes	
 Recover	Add a security deficit to the policy framework	
+Recover	Test restoration in an isolated environment and validate monitoring before returning the service to its agreed operating scope.	Hiago Kin Levi
 Recover	Joker - invent a new recover action	
 Recover	Joker - invent a new recover action	
 Recover	Joker - invent a new recover action	
@@ -112,6 +115,7 @@ Lessons Learned	Document results and new knowledge for the team and company
 Lessons Learned	Improve incident response processes	
 Lessons Learned	Improve incident detection capabilities	
 Lessons Learned	Add new detection rule to internal and external repositories	
+Lessons Learned	Record time boundaries, missing telemetry and uncertainty behind response metrics before comparing exercise results.	Hiago Kin Levi
 Lessons Learned	Joker - invent a new lessons learned step	
 Lessons Learned	Joker - invent a new lessons learned step	
 Lessons Learned	Joker - invent a new lessons learned step	
