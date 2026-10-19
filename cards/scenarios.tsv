@@ -27,6 +27,8 @@ Scenario	Your subscription database is hacked. Thousands of new accounts are add
 Scenario	New paste on a public paste site was found with password hashes and emails from your customer DB from 3 years ago. More recent hashes are missing.	https://twitter.com/badthingsdaily
 Scenario	Your reception software has leaked all of your visitor logs. They are available via torrent.	https://twitter.com/badthingsdaily
 Scenario	A script has been logging exported variables containing full user registration objects. This logging method is full of plaintext passwords.	https://twitter.com/badthingsdaily
+Scenario	After a user's password reset, mailbox reads continue under an unfamiliar OAuth application grant. A legitimate integration uses the same permission scope. Business email must remain available.	Hiago Kin Levi
+Scenario	A ransomware alert is followed by a gap in endpoint telemetry. The host appears online, backups have not yet been tested, and operations requests an immediate restart.	Hiago Kin Levi
 Scenario	Joker - be evil and invent a new nightmare and worst case scenario. What scenario will get your team struggling? (If you want to get crazy then contribute your scary scenario for the sake of humanity.)	
 Scenario	Joker - be evil and invent a new nightmare and worst case scenario. What scenario will get your team struggling? (If you want to get crazy then contribute your scary scenario for the sake of humanity.)	
 Scenario	Joker - be evil and invent a new nightmare and worst case scenario. What scenario will get your team struggling? (If you want to get crazy then contribute your scary scenario for the sake of humanity.)	
