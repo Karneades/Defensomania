@@ -1,216 +1,223 @@
 <p align="center">
   <img src="img/hand.png" width="750px">
+</p>
 
 # Defensomania
 
-Defensomania (formerly known as _Cyber Against Humanity_) is an 
-incident response card game. When your web server is
-compromised which steps would you initiate? What are your priorities if
-malware was executed on an endpoint and you shortly after identify data
-exfiltration to a remote server? Playing Defensomania using the provided
-scenarios educates and trains defenders and provides a basis for discussing
-different activities and their priorities. _How would you implement those
-activities in your environment?_ Defensomania uses well-known incident phases
-for the activity categories and focuses on cyber threat detection and
-response.
+Defensomania (formerly _Cyber Against Humanity_) is an incident response card
+game. Your web server is compromised: which steps do you take first? Malware
+ran on an endpoint and shortly after you see data leaving for a remote server:
+what are your priorities?
 
-Each round, one player is the attacker and reads a scenario card. All
-others are defenders and choose their best activity card. See section
-[gameplay](#gameplay) for the proposed gameplays and rules.
+Play Defensomania with the provided scenarios to train defenders and to
+discuss activities and their priorities. _How would you implement those
+activities in your environment?_ The activity cards follow well-known incident
+response phases and focus on threat detection and response.
+
+In each round, one player is the attacker and reads a scenario card. All other
+players are defenders and pick their best activity card. See
+[Gameplay](#gameplay) for the rules.
 
 Defensomania is for security monitoring and incident response what
 ["Elevation of Privilege"
 (EoP)](https://www.microsoft.com/en-us/download/details.aspx?id=20303) is for
-threat modeling or
+threat modeling and
 [Cornucopia](https://www.owasp.org/index.php/OWASP_Cornucopia) is for web
 application security.
 
-_**Disclaimer:** Defensomania is a personal project developed in 
-the spare time and scenarios are purely fictional or related to external writeups._
+_**Disclaimer:** Defensomania is a personal project developed in spare time.
+The scenarios are fictional or based on external write-ups._
 
 ## Download
 
-The [latest release](https://github.com/Karneades/Defensomania/releases/tag/deck-latest)
-contains the print-ready PDFs and a zip with all PNG files. It is rebuilt
+Get the print-ready files from the
+[latest release](https://github.com/Karneades/Defensomania/releases/tag/deck-latest).
+It contains all PDFs and a zip with all PNG files, and it is rebuilt
 automatically whenever the cards or the layout change.
 
-See [PDFs-to-print](PDFs-to-print) for different PDFs, either including both
-scenarios and activities or only one of them. Additionally, different layouts
-are used: 1, 6 or 9 cards per sheet. The [PDF with only the front cards using
-9 cards per sheet](https://github.com/Karneades/Defensomania/raw/master/PDFs-to-print/Defensomania-9-cards-per-sheet-all-front-without-bleed.pdf)
-is suitable for home printing.
+Which file to use depends on how you print:
 
-See [PNGs-to-print](PNGs-to-print) for all scenario and activity front and back
-PNG image files.
-
-1. **Print at home**. For easy printing use one of the PDFs which include
-   all scenarios and activities in one PDF.
-1. **Print at a local print shop or print via a commercial custom card
-   manufacturer**. The required files for printing varies between shops.
-   Sometimes PDFs which have 1 card per sheet are used and sometimes PNG image
-   files. Mostly front and back have to be provided separately. Furthermore,
-   the pre-built PDFs with 1 card per sheet and the PNG image files both
-   include the conventional 1/8" bleed around the card which will be cut away
-   after printing.
+* **At home:** use `Defensomania-9-cards-per-sheet-all-front-without-bleed.pdf`.
+  It contains all scenarios and activities with 9 cards per sheet.
+* **At a print shop or a custom card manufacturer:** the required files vary.
+  Some want PDFs with 1 card per sheet, others want PNG images (the PNG zip).
+  Front and back usually have to be provided separately. Both formats include
+  the usual 1/8" bleed around the card, which is cut away after printing.
 
 ## Card Deck
 
-__Future versions of Defensomania will use ATT&CK for additional attack events during the game
-and RE&CT for the activity cards instead of an internal IR activity list.__
-  
-Defensomania uses two types of cards: 
-[scenarios](cards/scenarios.tsv) and [activities](cards/activities.tsv). The
-scenario cards describe fictional security incidents and the activity cards
-describe activities used to handle these incidents. See column _Source_ in the
-[cards](cards) for external content attribution.
+__Future versions will use ATT&CK for additional attack events during the game
+and RE&CT for the activity cards instead of an internal activity list.__
 
-The activity cards are categorized based on the following well-known incident
-response phases: 
+There are two types of cards:
+
+* [Scenarios](cards/scenarios.tsv) describe fictional security incidents.
+* [Activities](cards/activities.tsv) describe the steps used to handle them.
+
+The _Source_ column in the [card files](cards) credits external content.
+
+Activity cards are grouped by these incident response phases:
 
 * Prepare
 * Detect
 * Respond
 * Recover
 * Lessons Learned
-* Communications
+* Communication
 
 ![Showcase](img/showcase.png)
 
-**See the list of [scenarios](cards/scenarios.tsv) and
-[activities](cards/activities.tsv) in the source files**.
-
 ![Cards-Preview](img/cards-preview.png)
 
-More activity cards means more possibilities during the game to react. [Consider
-adding more scenarios and activities](cards).
+More activity cards mean more ways to react during the game, so
+[consider adding more scenarios and activities](#contributing).
 
 ## Gameplay
 
-The proposed gameplays depend on your goal and what your team would
-like to exercise and what the scope of the training is. Choose between the
-following modes:
-- Best card wins
-- Incident response process
+Choose a mode based on what your team wants to practice:
 
-**Best card wins** lets you think about and discuss single activities and how
-they fit for a given scenario.
-  1. Put the scenario cards heads-down in the middle of the table.
-  1. Each person draws ten activity cards (skip the _joker_ cards). The cards
-     should only be visible to each player.
-  1. One person in the group starts as the attacker, takes the first
-     scenario card and reads it loud.
-  1. Each defender proposes the best activity by passing one activity
-     card, face down, to the attacker.
-     _Alternatively, instead of passing the card face down each defender
-     explains the proposed activity. If you want you can also include joker cards._
-  1. The attacker shuffles all of the cards and shares all activities to the
-     group. The attacker then picks the best activity card and whoever
-     submitted it gets one defend point by getting the scenario card. Discuss
-     the decision in respect to technical aspects and how you would implement
-     it in your environment.
-     * Prepare: What should you have had implemented to be prepared for that
-       scenario?
-     * Detect: How would you have been able to identify the attack? How could
-         you identify current malicious activities?
-     * Respond, Recover, Communication and Lessons Learned: How would you
-       respond to that incident?
-  1. Draw back up to 10 cards.
-  1. New round begins with the next person in the group acting as attacker.
+* **Best card wins:** discuss single activities and how well they fit a
+  scenario.
+* **Incident response process:** walk through one scenario from start to end.
 
-**Incident response process** is a more in-depth way of dealing
-with one scenario and considers priorities and the whole incident response
-process. This is serious business now. The goal is to see how the team would
-handle a fictional scenario from the beginning to the end of an incident.
-Discuss the processes, the responsibilities, the tools, the priorities and
-also who would you contact in case of emergency. Ask questions like "if we
-have that incident, what preparation is needed to be able to handle it?", "if we
-must contain the compromised host how would we do that?". If you
-incorporate a new subsidiary company into your security monitoring and
-incident response scope, ask questions like how would you handle that scenario
-for the new company and its infrastructure.
-  1. Put the scenario cards heads-down in the middle of the table.
-  1. Group the activity cards heads-up according to their phases.
-  1. Someone in the group now takes the first scenario card, reads it out loud
-     and... good luck.
-  1. Now spread out the activity cards for the first incident phase _prepare_
-     around the table.
-  1. Each player in turn takes one card from the current phase which
-     fits that scenario and describes what steps and which tools
-     are used to execute it. You should discuss the activities in the group and
-     its priorities for the scenario. Move forward to the next card.
-  1. After all relevant cards from a phase are played move on to the next phase.
+### Best card wins
+
+1. Put the scenario cards face down in the middle of the table.
+1. Each player draws ten activity cards and keeps them hidden. Skip the _joker_
+   cards.
+1. One player is the attacker. The attacker takes the first scenario card and
+   reads it out loud.
+1. Each defender passes the best activity card, face down, to the attacker.
+   _Alternative:_ each defender explains the proposed activity instead. You can
+   also include the joker cards.
+1. The attacker shuffles the cards, reads all activities out loud and picks
+   the best one. Whoever submitted it wins the scenario card as a defend point.
+1. Discuss the decision technically and how you would implement it in your
+   environment. Useful questions by phase:
+   * **Prepare:** what should have been in place to be ready for this scenario?
+   * **Detect:** how could you identify the attack, or the malicious activity
+     happening right now?
+   * **Respond, Recover, Communication and Lessons Learned:** how would you
+     respond to the incident?
+1. Everyone draws back up to ten cards.
+1. The next player becomes the attacker and a new round begins.
+
+### Incident response process
+
+This mode is a more in-depth way of dealing with one scenario. The goal is to
+see how your team would handle a fictional incident from beginning to end.
+Discuss processes, responsibilities, tools, priorities and who to contact in an
+emergency. Example questions:
+
+* "If we have this incident, what preparation do we need to handle it?"
+* "If we must contain the compromised host, how would we do that?"
+* "If we add a new subsidiary to our monitoring and incident response scope,
+  how would we handle this scenario for its infrastructure?"
+
+Steps:
+
+1. Put the scenario cards face down in the middle of the table.
+1. Group the activity cards face up by phase.
+1. One player takes the first scenario card and reads it out loud. Good luck.
+1. Spread out the activity cards of the first phase, _Prepare_, around the
+   table.
+1. In turn, each player takes one card from the current phase that fits the
+   scenario and describes the steps and tools used to carry it out. Discuss
+   the activity and its priority for the scenario as a group.
+1. When all relevant cards of a phase are played, move on to the next phase.
 
 ## Contributing
 
-Consider adding [scenarios and activities](cards), improve wording and rule
-descriptions or improve the layout and design.
+You can add [scenarios and activities](cards), improve wording and rules, or
+improve the layout and design.
 
-When adding or changing cards in [activities.tsv](cards/activities.tsv),
-[scenarios.tsv](cards/scenarios.tsv) or [worst.tsv](cards/worst.tsv), keep the
-text in the `Activity` column to **170 characters or fewer** (including
-spaces). Longer text does not fit on the card and is cut off with an ellipsis
-(`…`). Text with many capital letters or long words fits fewer characters
-(about 150), so check the build output for `Ellipsized (too much text)`
-warnings and shorten the text if one appears. Use imperative phrasing for
-activities (for example "Block IPs") and keep the columns tab-separated.
+### Adding or changing cards
+
+The cards are in [activities.tsv](cards/activities.tsv),
+[scenarios.tsv](cards/scenarios.tsv) and [worst.tsv](cards/worst.tsv). Please
+follow these rules:
+
+* Keep the `Activity` text to **170 characters or fewer**, including spaces.
+  Longer text does not fit and is cut off with an ellipsis (`…`).
+* Text with many capital letters or long words fits fewer characters (about
+  150). If the build prints `Ellipsized (too much text)`, shorten the text.
+* Write activities as imperative phrases, for example "Block IPs".
+* Keep the columns tab-separated.
+
+### Reviewing a pull request
+
+Every pull request that changes the cards, the layout or the build setup is
+built automatically by GitHub Actions. The workflow checks the file format and
+the text length and attaches the generated deck to the run as the artifact
+`defensomania-deck` (PDFs and a zip with all PNGs).
+
+To see how the cards and PDFs look before merging:
+
+1. Open the **Checks** tab of the pull request.
+1. Select the **Build card deck** run.
+1. Download the artifact from the **Artifacts** section.
+
+Artifacts expire after a retention period and need a GitHub login to download.
 
 ## Build your own Defensomania
 
-Build your own Defensomania card deck using [Squib](https://github.com/andymeneely/squib) and the [instructions](BUILD.md).
+Build the card deck yourself using [Squib](https://github.com/andymeneely/squib).
+See the [instructions](BUILD.md).
 
 ## Ideas
 
-Further extend the card deck by adding _event_ cards to inject new events to a
-otherwise static scenario. These events could be "credentials were stolen from
-server X", "credentials abused on system X", "data exfiltration identified on
-server X" and so on and the team can react with the activity cards to these
-additional events. 
-
-Secondly, build extra packs e.g. "Worst Response Pack". An activity for a
-scenario about a compromised workstation could be "log into the machine as
-domain administrator to search for malware" or "forward maldoc file to ticketing
-system where different others have access too", "communicate on twitter that
-you was hacked before social media department is informed". See [worst cards
-](cards/worst.tsv) for some examples. Not funny enough? Then what about
-building a PowerShell pack with only incident response activities using
-PowerShell commands called _PowerShell Against Humanity_? Now you're scared!
+* **Event cards:** inject new events into an otherwise static scenario, such as
+  "credentials were stolen from server X", "credentials abused on system X" or
+  "data exfiltration identified on server X". The team reacts to each event
+  with activity cards.
+* **Extra packs**, for example a "Worst Response Pack" with bad activities for
+  a scenario about a compromised workstation: "log into the machine as domain
+  administrator to search for malware", "forward the maldoc file to a ticketing
+  system many people can access" or "announce on Twitter that you were hacked
+  before the social media department is informed". See the
+  [worst cards](cards/worst.tsv) for examples.
+* **PowerShell Against Humanity:** a pack with only incident response
+  activities that use PowerShell commands. Not funny enough? Now you're scared!
 
 ## Acknowledgement & Inspiration
 
 * Thanks to my previous employer [Swisscom](https://www.swisscom.ch)
- ([Github](https://github.com/swisscom)) for allowing me to publish the
- project which was inspired by my work at the
- [@swisscom_csirt](https://twitter.com/swisscom_csirt).
-* Thanks to [andymeneely](https://github.com/andymeneely) for developing the
-  awesome Ruby DSL [Squib](https://github.com/andymeneely/squib) for easy card
-  deck building!
+  ([GitHub](https://github.com/swisscom)) for allowing me to publish the
+  project, which was inspired by my work at the
+  [@swisscom_csirt](https://twitter.com/swisscom_csirt).
+* Thanks to [andymeneely](https://github.com/andymeneely) for the awesome Ruby
+  DSL [Squib](https://github.com/andymeneely/squib) for easy card deck
+  building.
 * Thanks to [BadThingsDaily](https://twitter.com/badthingsdaily) for tweeting
-  about fictional tabletop scenarios and giving me permission to use them. They
-  have the attribution in the _Source_ column in the
+  fictional tabletop scenarios and giving me permission to use them. They are
+  credited in the _Source_ column of the
   [scenarios](cards/scenarios.tsv) file.
 * Thanks to [droe](https://github.com/droe) for various inputs and
   improvements during game development.
-* [Elevation of Privilege (EOP) by Microsoft](https://web.archive.org/web/20150312215303/http://www.microsoft.com/security/sdl/adopt/eop.aspx) ([Card Deck](https://www.microsoft.com/en-us/download/details.aspx?id=20303)): EoP is based on Microsoft's threat modeling framework "STRIDE" (Spoofing, Tampering, ...).
-* [Cornucopia](https://www.owasp.org/index.php/OWASP_Cornucopia) ([Card Deck](https://www.owasp.org/images/7/71/Owasp-cornucopia-ecommerce_website.pdf)): Cornucopia is based on OWASP's Top 10 (authentication, data Validation, ...).
+* [Elevation of Privilege (EoP) by Microsoft](https://web.archive.org/web/20150312215303/http://www.microsoft.com/security/sdl/adopt/eop.aspx)
+  ([card deck](https://www.microsoft.com/en-us/download/details.aspx?id=20303)):
+  based on Microsoft's threat modeling framework "STRIDE" (Spoofing,
+  Tampering, ...).
+* [Cornucopia](https://www.owasp.org/index.php/OWASP_Cornucopia)
+  ([card deck](https://www.owasp.org/images/7/71/Owasp-cornucopia-ecommerce_website.pdf)):
+  based on the OWASP Top 10 (authentication, data validation, ...).
 
 ## Artwork
 
-Icons made by Freepik, srip, Gregor Cresnar and Kiranshastry from www.flaticon.com.
+Icons made by Freepik, srip, Gregor Cresnar and Kiranshastry from
+www.flaticon.com.
 
 ## License
 
 [![License: CC BY-SA 4.0](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-The content of this project itself is licensed under a 
+The content of this project is licensed under the
 [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
-License](https://creativecommons.org/licenses/by-sa/4.0/), and the
-underlying source code used to format and display that content is licensed
-under the [MIT
+License](https://creativecommons.org/licenses/by-sa/4.0/). The source code
+used to format and display that content is licensed under the [MIT
 license](https://github.com/github/choosealicense.com/blob/gh-pages/LICENSE.md).
 
-Defensomania is free to use. It is licensed under the Creative
-Commons Attribution-ShareAlike 4.0 license, so you can copy,
-distribute and transmit the work, and you can adapt it, and use it
-commercially, but all provided that you attribute the work and if you alter,
-transform, or build upon this work, you may distribute the resulting work only
-under the same or similar license to this one.
+Defensomania is free to use. You can copy, distribute and transmit the work,
+adapt it and use it commercially, provided that you attribute the work. If you
+alter, transform or build upon this work, you may distribute the result only
+under the same or a similar license.
