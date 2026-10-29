@@ -1,0 +1,56 @@
+site_name: Defensomania
+site_description: Incident response card game for security monitoring and incident response teams
+site_url: https://karneades.github.io/Defensomania/
+repo_url: https://github.com/Karneades/Defensomania
+repo_name: Karneades/Defensomania
+edit_uri: edit/master/docs/
+
+theme:
+  name: material
+  icon:
+    logo: material/shield-sword
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: red
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: red
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - content.action.edit
+    - toc.follow
+
+nav:
+  - Home: index.md
+  - Download: download.md
+  - Gameplay: gameplay.md
+  - Cards: cards.md
+  - Contribute: contribute.md
+  - About: about.md
+
+hooks:
+  - hooks/cards.py
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.snippets:
+      base_path: ["."]
+      check_paths: true

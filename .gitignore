@@ -2,3 +2,4 @@
 *.swp
 src/_output/*.png
 src/_output/*.pdf
+site/

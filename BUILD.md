@@ -20,6 +20,19 @@ docker compose run --rm squib bundle exec rake pdf1all
 docker compose run --rm squib bundle exec rake -T
 ```
 
+## Preview the website
+
+The website is built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)
+from the `docs` folder and the card files. Run it from the project root:
+
+```
+pip install -r requirements-docs.txt
+mkdocs serve
+```
+
+The site is then available at http://127.0.0.1:8000. Use `mkdocs build --strict`
+to check for broken links, like the GitHub Pages workflow does.
+
 ## Build locally
 
 Change to the `src` directory and run the following commands as needed.

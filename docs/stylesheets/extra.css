@@ -1,0 +1,101 @@
+/* The card images have an opaque white background; present them as a card mat. */
+.card-image {
+  background: #fff;
+  border-radius: 0.6rem;
+}
+
+[data-md-color-scheme="slate"] .card-image {
+  box-shadow: 0 0 0 1px var(--md-default-fg-color--lightest),
+    0 0.4rem 1.2rem rgba(0, 0, 0, 0.5);
+}
+
+/* Card colors per type. Scenario cards are black like in the printed deck. */
+.phase-scenario { --card-color: #e53935; }
+.phase-prepare { --card-color: #1e88e5; }
+.phase-detect { --card-color: #8e24aa; }
+.phase-respond { --card-color: #e53935; }
+.phase-recover { --card-color: #43a047; }
+.phase-lessons-learned { --card-color: #fb8c00; }
+.phase-communication { --card-color: #00acc1; }
+.phase-worst { --card-color: #d81b60; }
+
+.card-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.card-chip {
+  padding: 0.15rem 0.7rem;
+  border-radius: 1rem;
+  background: var(--card-color);
+  color: #fff !important;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.card-chip span {
+  margin-left: 0.4rem;
+  opacity: 0.8;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0.8rem;
+  margin: 0.8rem 0 1.5rem;
+}
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.7rem 0.8rem 0.7rem 1rem;
+  border-left: 0.3rem solid var(--card-color);
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--md-default-fg-color--lightest),
+    0 0.1rem 0.3rem rgba(0, 0, 0, 0.12);
+  color: #212121;
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+[data-md-color-scheme="slate"] .game-card {
+  background: var(--md-code-bg-color);
+  color: var(--md-default-fg-color);
+}
+
+.phase-scenario .game-card {
+  background: #1b1b1b;
+  color: #f5f5f5;
+}
+
+.game-card p {
+  margin: 0;
+}
+
+.game-card__phase {
+  color: var(--card-color);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.game-card__source {
+  margin-top: auto;
+  font-size: 0.62rem;
+  opacity: 0.7;
+}
+
+.game-card--joker {
+  border: 0.1rem dashed var(--card-color);
+  border-left: 0.3rem solid var(--card-color);
+  background: transparent !important;
+  box-shadow: none;
+  color: var(--md-default-fg-color--light) !important;
+  font-style: italic;
+  justify-content: center;
+}
