@@ -1,7 +1,7 @@
 require 'squib'
 
-activities = Squib.csv file: '../cards/activities.tsv', col_sep: "\t"
-scenarios = Squib.csv file: '../cards/scenarios.tsv', col_sep: "\t"
+activities = Squib.csv file: '../cards/activities.tsv', col_sep: "\t", strip: false
+scenarios = Squib.csv file: '../cards/scenarios.tsv', col_sep: "\t", strip: false
 
 all_cards = activities
 all_cards['Phase'] += scenarios['Phase']

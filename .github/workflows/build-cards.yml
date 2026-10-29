@@ -1,0 +1,117 @@
+name: Build card deck
+
+on:
+  pull_request:
+    paths:
+      - "cards/**"
+      - "src/**"
+      - "img/**"
+      - "Dockerfile"
+      - ".github/workflows/build-cards.yml"
+  push:
+    branches: [master]
+    paths:
+      - "cards/**"
+      - "src/**"
+      - "img/**"
+      - "Dockerfile"
+      - ".github/workflows/build-cards.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: build-cards-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate card files
+        run: |
+          status=0
+          for f in cards/*.tsv; do
+            bad=$(awk -F'\t' 'NF != 3 { printf "line %d has %d columns\n", NR, NF }' "$f")
+            if [ -n "$bad" ]; then
+              echo "::error file=$f::expected 3 tab-separated columns"
+              echo "$bad"
+              status=1
+            fi
+          done
+          exit $status
+
+      - name: Check maximum text length
+        run: |
+          python3 - <<'EOF'
+          import csv, glob, sys
+
+          MAX = 170
+          failed = False
+          for path in sorted(glob.glob("cards/*.tsv")):
+              with open(path, newline="", encoding="utf-8") as f:
+                  for line, row in enumerate(csv.reader(f, delimiter="\t", quoting=csv.QUOTE_NONE), 1):
+                      if line == 1 or len(row) < 2:
+                          continue
+                      if len(row[1].strip()) > MAX:
+                          print(f"::error file={path},line={line}::Activity text has {len(row[1].strip())} characters (max {MAX})")
+                          failed = True
+          sys.exit(1 if failed else 0)
+          EOF
+
+      - name: Build image
+        run: docker build -t defensomania-squib .
+
+      - name: Build PDFs and PNGs
+        run: |
+          rm -f PDFs-to-print/*.pdf PNGs-to-print/*.png
+          docker run --rm --user "$(id -u):$(id -g)" \
+            -v "$PWD/PDFs-to-print:/app/PDFs-to-print" \
+            -v "$PWD/PNGs-to-print:/app/PNGs-to-print" \
+            defensomania-squib 2>&1 | tee build.log
+
+      - name: Fail on overflowing card text
+        run: |
+          if grep -q "Ellipsized" build.log; then
+            echo "::error::Card text does not fit. See README for the maximum text length."
+            grep -A1 "Ellipsized" build.log | sort -u
+            exit 1
+          fi
+
+      - name: Package PNGs
+        run: zip -qr Defensomania-PNGs-to-print.zip PNGs-to-print -x "*/README.md"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: defensomania-deck
+          path: |
+            PDFs-to-print/*.pdf
+            Defensomania-PNGs-to-print.zip
+          if-no-files-found: error
+
+  release:
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: defensomania-deck
+          path: deck
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete deck-latest --cleanup-tag --yes || true
+          gh release create deck-latest deck/PDFs-to-print/*.pdf deck/*.zip \
+            --target "$GITHUB_SHA" \
+            --title "Defensomania card deck (latest)" \
+            --notes "Print-ready PDFs and PNGs built from commit ${GITHUB_SHA}."
