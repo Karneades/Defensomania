@@ -28,6 +28,8 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
+    - search.highlight
+    - search.suggest
     - content.action.edit
     - toc.follow
 
@@ -54,3 +56,4 @@ markdown_extensions:
   - pymdownx.snippets:
       base_path: ["."]
       check_paths: true
+  - pymdownx.superfences

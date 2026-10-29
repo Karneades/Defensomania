@@ -5,6 +5,9 @@ hide:
 
 # About
 
+Defensomania was created and is maintained by
+[Karneades](https://github.com/Karneades) on GitHub.
+
 ## Acknowledgement & Inspiration
 
 * Thanks to my previous employer [Swisscom](https://www.swisscom.ch)

@@ -76,7 +76,6 @@ More activity cards mean more ways to react during the game, so
 
 ## Gameplay
 
-<!-- --8<-- [start:gameplay] -->
 Choose a mode based on what your team wants to practice:
 
 * **Best card wins:** discuss single activities and how well they fit a
@@ -128,8 +127,6 @@ Steps:
    scenario and describes the steps and tools used to carry it out. Discuss
    the activity and its priority for the scenario as a group.
 1. When all relevant cards of a phase are played, move on to the next phase.
-
-<!-- --8<-- [end:gameplay] -->
 
 ## Contributing
 

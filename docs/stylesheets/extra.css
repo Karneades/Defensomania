@@ -40,6 +40,19 @@
   opacity: 0.8;
 }
 
+.phase-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.phase-flow .card-chip:not(:last-child)::after {
+  content: "\2192";
+  margin-left: 0.5rem;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
