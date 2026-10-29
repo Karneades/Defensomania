@@ -30,6 +30,10 @@ the spare time and scenarios are purely fictional or related to external writeup
 
 ## Download
 
+The [latest release](https://github.com/Karneades/Defensomania/releases/tag/deck-latest)
+contains the print-ready PDFs and a zip with all PNG files. It is rebuilt
+automatically whenever the cards or the layout change.
+
 See [PDFs-to-print](PDFs-to-print) for different PDFs, either including both
 scenarios and activities or only one of them. Additionally, different layouts
 are used: 1, 6 or 9 cards per sheet. The [PDF with only the front cards using
@@ -140,6 +144,15 @@ for the new company and its infrastructure.
 
 Consider adding [scenarios and activities](cards), improve wording and rule
 descriptions or improve the layout and design.
+
+When adding or changing cards in [activities.tsv](cards/activities.tsv),
+[scenarios.tsv](cards/scenarios.tsv) or [worst.tsv](cards/worst.tsv), keep the
+text in the `Activity` column to **170 characters or fewer** (including
+spaces). Longer text does not fit on the card and is cut off with an ellipsis
+(`…`). Text with many capital letters or long words fits fewer characters
+(about 150), so check the build output for `Ellipsized (too much text)`
+warnings and shorten the text if one appears. Use imperative phrasing for
+activities (for example "Block IPs") and keep the columns tab-separated.
 
 ## Build your own Defensomania
 

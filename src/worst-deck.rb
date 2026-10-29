@@ -1,7 +1,7 @@
 require 'squib'
 
-worst = Squib.csv file: '../cards/worst.tsv', col_sep: "\t"
-scenarios = Squib.csv file: '../cards/scenarios.tsv', col_sep: "\t"
+worst = Squib.csv file: '../cards/worst.tsv', col_sep: "\t", strip: false
+scenarios = Squib.csv file: '../cards/scenarios.tsv', col_sep: "\t", strip: false
 
 all_cards_worst = worst
 all_cards_worst['Phase'] += scenarios['Phase']

@@ -6,6 +6,22 @@ making the card deck. See
 [installation](https://squib.readthedocs.io/en/latest/install.html) in the docs
 for more information on how to install Squib. 
 
+## Build with Docker
+
+The `Dockerfile` installs Ruby, the native dependencies and Squib. The
+`PDFs-to-print` and `PNGs-to-print` folders are mapped into the container.
+
+```
+# build all PDFs and PNGs (rake all)
+docker compose run --rm --build squib
+
+# run any other rake task, e.g.
+docker compose run --rm squib bundle exec rake pdf1all
+docker compose run --rm squib bundle exec rake -T
+```
+
+## Build locally
+
 Change to the `src` directory and run the following commands as needed.
 
 See which rake tasks are defined

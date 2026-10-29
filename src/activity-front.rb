@@ -1,6 +1,6 @@
 require 'squib'
 
-activities = Squib.csv file: '../cards/activities.tsv', col_sep: "\t"
+activities = Squib.csv file: '../cards/activities.tsv', col_sep: "\t", strip: false
 layouts = 'layout-front.yml'
 
 Squib::Deck.new cards: activities['Phase'].size, layout: layouts do

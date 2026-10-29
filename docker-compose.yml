@@ -1,0 +1,8 @@
+services:
+  squib:
+    build: .
+    image: defensomania-squib
+    user: "${UID:-1000}:${GID:-1000}"
+    volumes:
+      - ./PDFs-to-print:/app/PDFs-to-print
+      - ./PNGs-to-print:/app/PNGs-to-print
