@@ -73,6 +73,40 @@ button:focus-visible, .card:focus-visible, a:focus-visible { outline: 3px solid 
 }
 .back:hover { background: var(--accent); color: var(--bg); }
 
+/* Overflow menu */
+.more { position: relative; }
+#more { padding: 0.4rem 0.7rem; font-weight: 700; line-height: 1; }
+#more-menu {
+  position: absolute;
+  top: calc(100% + 0.3rem);
+  right: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 10rem;
+  padding: 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+#more-menu[hidden] { display: none; }
+#more-menu button { text-align: left; }
+
+/* Sharing tip */
+#tip {
+  margin: 0.2rem 1.2rem 0.3rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #43a047;
+  border-radius: 8px;
+  background: light-dark(#dcf5de, #1f4a28);
+  color: light-dark(#14451a, #d4f5d8);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+#tip[hidden] { display: none; }
+
 /* Phase filter */
 .phases {
   display: flex;
@@ -311,10 +345,13 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.65); }
   bottom: 1.5rem;
   left: 50%;
   padding: 0.5rem 1rem;
-  border-radius: 999px;
+  border-radius: 14px;
   background: var(--fg);
   color: var(--bg);
   font-size: 0.85rem;
+  text-align: center;
+  width: max-content;
+  max-width: 90vw;
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, 10px);
@@ -329,4 +366,17 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.65); }
   .scenario { overflow: visible; }
   .hand { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: minmax(9rem, auto); }
   .keys { display: none; }
+}
+
+/* Phones: tighter header, single-row scrolling phase filter */
+@media (max-width: 600px) {
+  header { padding: 0.4rem 0.6rem 0.2rem; gap: 0.3rem; }
+  #tip { margin: 0.2rem 0.6rem; }
+  h1 { font-size: 1.1rem; }
+  .controls { gap: 0.3rem; }
+  .controls button, .back { padding: 0.35rem 0.6rem; font-size: 0.8rem; }
+  .back { margin-right: 0; }
+  .back span { display: none; }
+  .phases { flex-wrap: nowrap; overflow-x: auto; padding: 0.2rem 0.6rem 0.4rem; scrollbar-width: none; }
+  .chip { flex: none; }
 }

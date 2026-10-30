@@ -16,17 +16,26 @@
       Defensomania
     </h1>
     <div class="controls">
-      <a class="back" href="../">&larr; Back to the website</a>
+      <a class="back" href="../" title="Back to the website">&larr;<span> Back to the website</span></a>
       <button id="new-scenario" title="New scenario and hand (N)">New scenario + hand</button>
       <button id="redeal" title="Redeal the hand (R)">Redeal hand</button>
       <button id="pick-scenario" title="Choose a scenario (P)">Pick scenario</button>
       <button id="play" title="Show the selected card large (Enter)" disabled>Play card</button>
-      <button id="cover" aria-pressed="false" title="Hide the cards for hot-seat play (C)">Cover cards</button>
-      <button id="copy-link" title="Copy a link to this exact deal (L)">Copy link</button>
-      <button id="theme" title="Switch light/dark theme (T)">Theme</button>
-      <button id="fullscreen" title="Presentation mode (F)">Fullscreen</button>
+      <div class="more">
+        <button id="more" aria-label="More options" aria-haspopup="true" aria-expanded="false" aria-controls="more-menu">&hellip;</button>
+        <div id="more-menu" role="menu" hidden>
+          <button id="copy-link" role="menuitem" title="Copy a link to this exact deal (L)">Copy link</button>
+          <button id="cover" role="menuitem" aria-pressed="false" title="Hide the cards for hot-seat play (C)">Cover cards</button>
+          <button id="theme" role="menuitem" title="Switch light/dark theme (T)">Theme</button>
+          <button id="fullscreen" role="menuitem" title="Presentation mode (F)">Fullscreen</button>
+        </div>
+      </div>
     </div>
   </header>
+
+  <div id="tip" role="note" hidden>
+    <b>Tip:</b> open the &hellip; menu and choose <b>Copy link</b> to share these exact cards with others. Tap this note to dismiss.
+  </div>
 
   <nav id="phases" class="phases" aria-label="Activity phases"></nav>
 
@@ -39,7 +48,7 @@
     <span class="keys">Keys: <b>N</b> new &middot; <b>R</b> redeal &middot; <b>P</b> pick scenario &middot; <b>1-0</b> select &middot; <b>Enter</b> play &middot; <b>C</b> cover &middot; <b>L</b> copy link &middot; <b>F</b> fullscreen &middot; <b>T</b> theme</span>
     <span class="credits">
       <a href="https://github.com/Karneades/Defensomania">Defensomania</a> by Andreas Hunkeler
-      (<a href="https://github.com/Karneades/Defensomania/blob/master/LICENSE">MIT</a>).
+      (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).
       Scenario sources are credited on the cards and on the <a href="../cards/">cards page</a>.
     </span>
   </footer>

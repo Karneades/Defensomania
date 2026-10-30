@@ -1,6 +1,7 @@
 const HAND_SIZE = 10;
 const MAX_SWAPS = 3;
 const THEME_KEY = "defensomania-theme";
+const TIP_KEY = "defensomania-share-tip";
 
 if (!window.CARDS) {
   document.querySelector("main").textContent =
@@ -68,12 +69,12 @@ function svg(path) {
   return root;
 }
 
-function toast(message) {
+function toast(message, ms = 1800) {
   const node = $("toast");
   node.textContent = message;
   node.classList.add("show");
   clearTimeout(toast.timer);
-  toast.timer = setTimeout(() => node.classList.remove("show"), 1800);
+  if (ms) toast.timer = setTimeout(() => node.classList.remove("show"), ms);
 }
 
 /* Deck state */
@@ -362,8 +363,17 @@ for (const dialog of [playDialog, pickDialog]) {
 
 /* Sharing, theme, presentation */
 
+function markTipSeen() {
+  try {
+    localStorage.setItem(TIP_KEY, "1");
+  } catch {
+    // Storage can be blocked; the tip then simply shows again next visit.
+  }
+}
+
 async function copyLink() {
   updateHash();
+  markTipSeen();
   try {
     await navigator.clipboard.writeText(location.href);
     toast("Link copied");
@@ -450,6 +460,26 @@ $("copy-link").addEventListener("click", copyLink);
 $("theme").addEventListener("click", toggleTheme);
 $("fullscreen").addEventListener("click", toggleFullscreen);
 
+const moreBtn = $("more");
+const moreMenu = $("more-menu");
+function setMenu(open) {
+  moreMenu.hidden = !open;
+  moreBtn.setAttribute("aria-expanded", String(open));
+}
+moreBtn.addEventListener("click", () => setMenu(moreMenu.hidden));
+moreMenu.addEventListener("click", () => setMenu(false));
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".more")) setMenu(false);
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !moreMenu.hidden) {
+    setMenu(false);
+    moreBtn.focus();
+  }
+});
+// iPhones do not support the Fullscreen API.
+if (!document.documentElement.requestFullscreen) $("fullscreen").hidden = true;
+
 /* Start */
 
 function loadFromHash() {
@@ -480,6 +510,21 @@ window.addEventListener("hashchange", () => {
 renderPhases();
 loadFromHash();
 updateHash();
+
+let tipSeen = false;
+try {
+  tipSeen = Boolean(localStorage.getItem(TIP_KEY));
+} catch {
+  // Storage can be blocked; show the tip.
+}
+if (!tipSeen) {
+  const tip = $("tip");
+  tip.hidden = false;
+  tip.addEventListener("click", () => {
+    tip.hidden = true;
+    markTipSeen();
+  });
+}
 
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
   navigator.serviceWorker.register("sw.js").catch(() => {});
