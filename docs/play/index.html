@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Defensomania</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>
+      <svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1L3 5V11C3 16.5 6.8 21.7 12 23C17.2 21.7 21 16.5 21 11V5L12 1M15 15H13V18H11V15H9V13H11L10 7.1L12 5.5L14 7.1L13 13H15V15Z"/></svg>
+      Defensomania
+    </h1>
+    <div class="controls">
+      <a class="back" href="../">&larr; Back to the website</a>
+      <button id="new-scenario">New scenario + new hand</button>
+      <button id="redeal">Redeal hand</button>
+      <button id="clear" title="Clear selection">Clear selection</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="scenario" class="card scenario" aria-live="polite"></section>
+    <section id="hand" class="hand" aria-label="Activity cards"></section>
+  </main>
+
+  <script src="cards-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

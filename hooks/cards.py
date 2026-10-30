@@ -1,5 +1,6 @@
 import csv
 import html
+import json
 from pathlib import Path
 
 from mkdocs.structure.files import File
@@ -20,6 +21,28 @@ def on_files(files, config):
             )
         )
     return files
+
+
+def on_post_build(config):
+    """Write the card data used by the static play page (docs/play)."""
+    data = {
+        name: [
+            {
+                "phase": r["Phase"].strip(),
+                "text": r["Activity"].strip(),
+                "source": (r.get("Source") or "").strip(),
+            }
+            for r in _read(name)
+            if r["Activity"].strip()
+        ]
+        for name in ("scenarios", "activities")
+    }
+    target = Path(config["site_dir"]) / "play" / "cards-data.js"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(
+        "window.CARDS = " + json.dumps(data, ensure_ascii=False) + ";\n",
+        encoding="utf-8",
+    )
 
 
 def on_page_markdown(markdown, page, config, files):

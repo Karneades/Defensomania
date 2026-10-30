@@ -10,11 +10,20 @@
 }
 
 /* Start page buttons: equal size, stacked on phones, one row on wider screens. */
+/* Markdown wraps the links in a <p>, so that <p> is the grid container. */
 .hero-buttons {
+  margin: 1.5rem 0;
+}
+
+.hero-buttons > p {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.6rem;
-  margin: 1.5rem 0;
+  margin: 0;
+}
+
+.hero-buttons br {
+  display: none;
 }
 
 .hero-buttons .md-button {
@@ -23,8 +32,9 @@
   justify-content: center;
   box-sizing: border-box;
   margin: 0;
-  padding: 0.7em 1.5em;
-  border-radius: 0.6rem;
+  padding: 0.35em 0.8em;
+  border-radius: 0.5rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-align: center;
   transition: transform 0.15s, box-shadow 0.15s, background-color 0.25s,
@@ -42,9 +52,9 @@
 }
 
 @media screen and (min-width: 40em) {
-  .hero-buttons {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.8rem;
+  .hero-buttons > p {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
   }
 }
 

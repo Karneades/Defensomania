@@ -9,6 +9,9 @@ Choose a mode based on what your team wants to practice. Both modes use the
 same cards: one player reads a [scenario](cards.md#scenarios), the others
 respond with [activities](cards.md#activities).
 
+No cards at hand? Deal a random scenario and ten activity cards on one screen
+with the [online card dealer](play/index.html).
+
 <div class="grid cards" markdown>
 
 -   **Best card wins**

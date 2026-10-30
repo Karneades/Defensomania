@@ -22,6 +22,7 @@ response phases and focus on threat detection and response.
 
 <div class="hero-buttons" markdown>
 [Download the cards](download.md){ .md-button .md-button--primary }
+[Play online](play/index.html){ .md-button }
 [How to play](gameplay.md){ .md-button }
 [Browse the cards](cards.md){ .md-button }
 </div>
@@ -32,6 +33,9 @@ In each round, one player is the attacker and reads a scenario card. All other
 players are defenders and pick their best activity card. The group then
 discusses how each activity would be implemented in their own environment.
 See the [gameplay page](gameplay.md) for the full rules.
+
+No printed deck at hand? Deal a random scenario and ten activity cards on one
+screen with the [online card dealer](play/index.html).
 
 ![Showcase](img/showcase.png){ .card-image }
 
