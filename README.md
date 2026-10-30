@@ -39,7 +39,8 @@ automatically whenever the cards or the layout change.
 
 Which file to use depends on how you print:
 
-* **At home:** use `Defensomania-9-cards-per-sheet-all-front-without-bleed.pdf`.
+* **At home:** use
+  [`Defensomania-9-cards-per-sheet-all-front-without-bleed.pdf`](https://github.com/Karneades/Defensomania/releases/download/deck-latest/Defensomania-9-cards-per-sheet-all-front-without-bleed.pdf).
   It contains all scenarios and activities with 9 cards per sheet.
 * **At a print shop or a custom card manufacturer:** the required files vary.
   Some want PDFs with 1 card per sheet, others want PNG images (the PNG zip).

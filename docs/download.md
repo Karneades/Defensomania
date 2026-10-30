@@ -16,7 +16,9 @@ Which file to use depends on how you print.
 
 ### Print at home
 
-Use `Defensomania-9-cards-per-sheet-all-front-without-bleed.pdf`. It contains
+Use
+[`Defensomania-9-cards-per-sheet-all-front-without-bleed.pdf`](https://github.com/Karneades/Defensomania/releases/download/deck-latest/Defensomania-9-cards-per-sheet-all-front-without-bleed.pdf).
+It contains
 all scenarios and activities with 9 cards per sheet.
 
 ### Print at a print shop or a custom card manufacturer

@@ -58,6 +58,35 @@
 .phase-communication { --card-color: #00acc1; }
 .phase-worst { --card-color: #d81b60; }
 
+.card-filter {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 24rem;
+  margin-top: 0;
+  padding: 0.4rem 0.8rem;
+  border: 0.05rem solid var(--md-default-fg-color--lighter);
+  border-radius: 0.5rem;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font: inherit;
+}
+
+.card-filter:focus {
+  border-color: var(--md-accent-fg-color);
+  outline: none;
+}
+
+.card-filter-status {
+  margin: 0.3rem 0 0;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.7rem;
+}
+
+.card-grid[hidden],
+.game-card[hidden] {
+  display: none;
+}
+
 .card-legend {
   display: flex;
   flex-wrap: wrap;
@@ -150,4 +179,6 @@
   color: var(--md-default-fg-color--light) !important;
   font-style: italic;
   justify-content: center;
+}
+
 }

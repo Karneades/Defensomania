@@ -47,6 +47,9 @@ hooks:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/card-filter.js
+
 markdown_extensions:
   - admonition
   - attr_list
