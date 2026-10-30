@@ -9,6 +9,45 @@
     0 0.4rem 1.2rem rgba(0, 0, 0, 0.5);
 }
 
+/* Start page buttons: equal size, stacked on phones, one row on wider screens. */
+.hero-buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+  margin: 1.5rem 0;
+}
+
+.hero-buttons .md-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.7em 1.5em;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  text-align: center;
+  transition: transform 0.15s, box-shadow 0.15s, background-color 0.25s,
+    color 0.25s, border-color 0.25s;
+}
+
+.hero-buttons .md-button:hover,
+.hero-buttons .md-button:focus {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.25);
+}
+
+.hero-buttons .md-button--primary {
+  box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (min-width: 40em) {
+  .hero-buttons {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+}
+
 /* Card colors per type. Scenario cards are black like in the printed deck. */
 .phase-scenario { --card-color: #e53935; }
 .phase-prepare { --card-color: #1e88e5; }

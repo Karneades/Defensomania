@@ -4,10 +4,6 @@ hide:
   - toc
 ---
 
-<p align="center">
-  <img src="img/hand.png" alt="Defensomania cards" width="750" class="card-image">
-</p>
-
 # Defensomania
 
 Defensomania (formerly _Cyber Against Humanity_) is an incident response card
@@ -20,21 +16,27 @@ discuss activities and their priorities. _How would you implement those
 activities in your environment?_ The activity cards follow well-known incident
 response phases and focus on threat detection and response.
 
+<p align="center">
+  <img src="img/hand.png" alt="Defensomania cards" width="750" class="card-image">
+</p>
+
+<div class="hero-buttons" markdown>
 [Download the cards](download.md){ .md-button .md-button--primary }
 [How to play](gameplay.md){ .md-button }
 [Browse the cards](cards.md){ .md-button }
+</div>
 
 ## How it works
 
 In each round, one player is the attacker and reads a scenario card. All other
 players are defenders and pick their best activity card. The group then
 discusses how each activity would be implemented in their own environment.
+See the [gameplay page](gameplay.md) for the full rules.
 
 ![Showcase](img/showcase.png){ .card-image }
 
 Defensomania is for security monitoring and incident response what
-["Elevation of Privilege"
-(EoP)](https://www.microsoft.com/en-us/download/details.aspx?id=20303) is for
+[Elevation of Privilege (EoP)](https://www.microsoft.com/en-us/download/details.aspx?id=20303) is for
 threat modeling and
 [Cornucopia](https://www.owasp.org/index.php/OWASP_Cornucopia) is for web
 application security.
@@ -52,3 +54,5 @@ Browse every card on the [cards page](cards.md).
 
 _**Disclaimer:** Defensomania is a personal project developed in spare time.
 The scenarios are fictional or based on external write-ups._
+
+
