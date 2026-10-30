@@ -1,6 +1,7 @@
 import csv
 import html
 import json
+import shutil
 from pathlib import Path
 
 from mkdocs.structure.files import File
@@ -43,6 +44,12 @@ def on_post_build(config):
         "window.CARDS = " + json.dumps(data, ensure_ascii=False) + ";\n",
         encoding="utf-8",
     )
+
+    # The deck's own icons; file names lose spaces to keep URLs simple.
+    icons = target.parent / "icons"
+    icons.mkdir(exist_ok=True)
+    for svg in (ROOT / "src" / "icons").glob("*.svg"):
+        shutil.copyfile(svg, icons / svg.name.replace(" ", "-"))
 
 
 def on_page_markdown(markdown, page, config, files):

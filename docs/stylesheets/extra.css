@@ -58,6 +58,34 @@
   }
 }
 
+/* The last tab ("Play" in mkdocs.yml nav) is the game, not a page: right-aligned and highlighted. */
+.md-tabs__item:last-child {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.md-tabs__item:last-child .md-tabs__link {
+  margin-top: 0;
+  padding: 0.2rem 0.9rem;
+  border-radius: 999px;
+  background: var(--md-accent-fg-color);
+  color: #fff;
+  font-weight: 700;
+  opacity: 1;
+  transition: filter 0.2s, transform 0.15s;
+}
+
+.md-tabs__item:last-child .md-tabs__link::before {
+  content: "\25B6\00a0";
+  font-size: 0.8em;
+}
+
+.md-tabs__item:last-child .md-tabs__link:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
 /* Card colors per type. Scenario cards are black like in the printed deck. */
 .phase-scenario { --card-color: #e53935; }
 .phase-prepare { --card-color: #1e88e5; }

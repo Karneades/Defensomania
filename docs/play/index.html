@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Defensomania</title>
+  <title>Defensomania - Online card dealer</title>
+  <meta name="theme-color" content="#14181f">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,18 +17,51 @@
     </h1>
     <div class="controls">
       <a class="back" href="../">&larr; Back to the website</a>
-      <button id="new-scenario">New scenario + new hand</button>
-      <button id="redeal">Redeal hand</button>
-      <button id="clear" title="Clear selection">Clear selection</button>
+      <button id="new-scenario" title="New scenario and hand (N)">New scenario + hand</button>
+      <button id="redeal" title="Redeal the hand (R)">Redeal hand</button>
+      <button id="pick-scenario" title="Choose a scenario (P)">Pick scenario</button>
+      <button id="play" title="Show the selected card large (Enter)" disabled>Play card</button>
+      <button id="cover" aria-pressed="false" title="Hide the cards for hot-seat play (C)">Cover cards</button>
+      <button id="copy-link" title="Copy a link to this exact deal (L)">Copy link</button>
+      <button id="theme" title="Switch light/dark theme (T)">Theme</button>
+      <button id="fullscreen" title="Presentation mode (F)">Fullscreen</button>
     </div>
   </header>
+
+  <nav id="phases" class="phases" aria-label="Activity phases"></nav>
 
   <main>
     <section id="scenario" class="card scenario" aria-live="polite"></section>
     <section id="hand" class="hand" aria-label="Activity cards"></section>
   </main>
 
+  <footer>
+    <span class="keys">Keys: <b>N</b> new &middot; <b>R</b> redeal &middot; <b>P</b> pick scenario &middot; <b>1-0</b> select &middot; <b>Enter</b> play &middot; <b>C</b> cover &middot; <b>L</b> copy link &middot; <b>F</b> fullscreen &middot; <b>T</b> theme</span>
+    <span class="credits">
+      <a href="https://github.com/Karneades/Defensomania">Defensomania</a> by Andreas Hunkeler
+      (<a href="https://github.com/Karneades/Defensomania/blob/master/LICENSE">MIT</a>).
+      Scenario sources are credited on the cards and on the <a href="../cards/">cards page</a>.
+    </span>
+  </footer>
+
+  <dialog id="play-dialog" aria-label="Played card">
+    <div id="play-content"></div>
+    <form method="dialog" class="dialog-actions"><button autofocus>Close</button></form>
+  </dialog>
+
+  <dialog id="pick-dialog" aria-label="Pick a scenario">
+    <input id="pick-filter" type="search" placeholder="Filter scenarios..." aria-label="Filter scenarios">
+    <ul id="pick-list"></ul>
+    <div class="dialog-actions">
+      <button id="pick-random" type="button">Random scenario</button>
+      <form method="dialog"><button>Close</button></form>
+    </div>
+  </dialog>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
   <script src="cards-data.js"></script>
+  <script src="icons.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

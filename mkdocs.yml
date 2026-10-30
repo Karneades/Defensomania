@@ -40,6 +40,7 @@ nav:
   - Cards: cards.md
   - Contribute: contribute.md
   - About: about.md
+  - Play: play/index.html
 
 hooks:
   - hooks/cards.py
