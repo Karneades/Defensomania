@@ -67,6 +67,8 @@ jobs:
 
       - name: Build PDFs and PNGs
         run: |
+          # Docker would create missing bind-mount folders as root, which the container user cannot write to.
+          mkdir -p PDFs-to-print PNGs-to-print
           rm -f PDFs-to-print/*.pdf PNGs-to-print/*.png
           docker run --rm --user "$(id -u):$(id -g)" \
             -v "$PWD/PDFs-to-print:/app/PDFs-to-print" \
@@ -110,8 +112,15 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # The artifact layout depends on the upload paths, so find the files instead of assuming it.
+          find deck -type f
+          mapfile -t files < <(find deck -type f \( -name '*.pdf' -o -name '*.zip' \))
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "::error::No PDFs or ZIPs found in the downloaded artifact"
+            exit 1
+          fi
           gh release delete deck-latest --cleanup-tag --yes || true
-          gh release create deck-latest deck/PDFs-to-print/*.pdf deck/*.zip \
+          gh release create deck-latest "${files[@]}" \
             --target "$GITHUB_SHA" \
             --title "Defensomania card deck (latest)" \
             --notes "Print-ready PDFs and PNGs built from commit ${GITHUB_SHA}."
