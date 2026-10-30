@@ -11,6 +11,7 @@ Prepare	Ensure central collection of relevant logs from systems in monitoring an
 Prepare	Deploy remote forensics software	
 Prepare	Deploy tools and capabilities for containment	
 Prepare	Prepare a decision tree and establish processes for GDPR readiness	
+Prepare	Allow only a subset of oauth clients to be used in the company	
 Prepare	Attend or organize internal and external exercises	
 Prepare	Build a coordination and escalation team for major incidents	
 Prepare	Prepare and implement playbooks to assist analysts	
@@ -39,6 +40,7 @@ Detect	Search for referrers in your network logs
 Detect	Search for user agents in your network logs	
 Detect	Search for URLs in your network logs	
 Detect	Search for leaked data on public search engines and paste sites	
+Detect	Search for unfamiliar and unauthorized oauth clients	
 Detect	Detect credential abuse through login anomalies	
 Detect	Detect credential leakage by monitoring external paste sites	
 Detect	Detect leaked sensitive information in public source code repositories	
@@ -63,6 +65,7 @@ Respond	Remove malware from a compromised system
 Respond	Stop a malicious process on a compromised system	
 Respond	Stop data leakage from a compromised system	
 Respond	Remove sensitive data from a publicly accessible website	
+Respond	Remove unfamiliar and unauthorized oauth clients	
 Respond	Start first response and gather volatile data	
 Respond	Collect and analyse logs from a compromised system	
 Respond	Collect evidence from a compromised system	
