@@ -32,7 +32,7 @@ const state = {
   deck: [],
 };
 
-const slug = (phase) => phase.toLowerCase().replace(/\s+/g, "-");
+const slug = (phase) => phase.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 const isJoker = (card) => /^joker\b/i.test(card.text);
 
 function shuffle(items) {
