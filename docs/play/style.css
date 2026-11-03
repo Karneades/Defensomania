@@ -414,8 +414,34 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.65); }
 /* Small screens: stack and scroll */
 @media (max-width: 900px) {
   body { height: auto; min-height: 100dvh; }
-  main { grid-template-columns: 1fr; }
-  .scenario { overflow: visible; }
+  /* Slightly under the real header height so the scenario tucks beneath it without a gap (CSP forbids setting this from JS) */
+  :root { --header-h: 2.9rem; }
+  header { position: sticky; top: 0; z-index: 15; background: var(--bg); }
+  /* Block layout: a grid row would end with the scenario and leave nothing to stick across */
+  main { display: block; }
+  /* Opaque backing for the scenario's rounded top corners, so cards don't show through them */
+  main::before {
+    content: "";
+    display: block;
+    position: sticky;
+    top: var(--header-h, 0px);
+    z-index: 4;
+    height: 1rem;
+    margin-bottom: -1rem;
+    background: var(--bg);
+  }
+  .scenario {
+    position: sticky;
+    top: var(--header-h, 0px);
+    z-index: 5;
+    max-height: 38dvh;
+    margin-bottom: 0.8rem;
+    /* Stacked translucent shadows fade out cards scrolling beneath the scenario */
+    --fade: color-mix(in srgb, var(--bg) 11%, transparent);
+    box-shadow:
+      0 0.3rem 0 var(--fade), 0 0.55rem 0 var(--fade), 0 0.8rem 0 var(--fade), 0 1.05rem 0 var(--fade), 0 1.3rem 0 var(--fade),
+      0 1.55rem 0 var(--fade), 0 1.8rem 0 var(--fade), 0 2.05rem 0 var(--fade), 0 2.3rem 0 var(--fade);
+  }
   .hand { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: minmax(9rem, auto); }
   .keys { display: none; }
 }
@@ -423,6 +449,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.65); }
 /* Phones: tighter header, single-row scrolling phase filter */
 @media (max-width: 600px) {
   header { padding: 0.4rem 1.2rem 0.2rem; gap: 0.3rem; }
+  :root { --header-h: 2.3rem; }
   #tip { margin: 0.2rem 1.2rem; }
   h1 { font-size: 1.1rem; }
   .back { padding: 0.32rem 0.6rem; font-size: 0.8rem; }
