@@ -180,10 +180,9 @@ button:focus-visible, .card:focus-visible, a:focus-visible { outline: 3px solid 
   flex: none;
   width: 1.3em;
   height: 1.3em;
-  background: currentColor;
-  -webkit-mask: var(--icon) center / contain no-repeat;
-  mask: var(--icon) center / contain no-repeat;
+  color: inherit;
 }
+.icon svg { display: block; width: 100%; height: 100%; fill: currentColor; }
 .chip[aria-pressed="true"] { background: var(--c); color: #fff; }
 .chip:hover:not(:disabled) { border-color: var(--c); filter: brightness(1.1); }
 
@@ -441,8 +440,6 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.65); }
   .scenario { max-height: 38dvh; }
   .hand { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: minmax(9rem, auto); }
   .keys { display: none; }
-  /* iOS Safari repaints masked elements late while scrolling under sticky layers; give them their own layer */
-  .icon { transform: translateZ(0); }
 }
 
 /* Phones: tighter header, single-row scrolling phase filter */

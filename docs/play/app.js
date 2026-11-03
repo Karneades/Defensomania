@@ -52,10 +52,37 @@ function el(tag, className, text) {
   return node;
 }
 
+// Inline SVG paints with the page; CSS-masked external images flicker while scrolling on iOS Safari.
+const iconSvgs = new Map();
+
+async function loadIcons() {
+  const names = ["scenario", ...PHASES.map(slug)];
+  await Promise.all(
+    names.map(async (name) => {
+      try {
+        const res = await fetch(`icons/${name}.svg`);
+        const root = new DOMParser().parseFromString(await res.text(), "image/svg+xml").documentElement;
+        if (!res.ok || root.localName !== "svg") return;
+        for (const attr of ["width", "height", "style", "x", "y"]) root.removeAttribute(attr);
+        for (const node of root.querySelectorAll("[style], [fill]")) {
+          node.removeAttribute("style");
+          node.removeAttribute("fill");
+        }
+        root.setAttribute("aria-hidden", "true");
+        root.setAttribute("focusable", "false");
+        iconSvgs.set(name, document.importNode(root, true));
+      } catch {
+        // Offline without a cached copy: the card simply has no icon.
+      }
+    })
+  );
+}
+
 function icon(name) {
   const node = el("span", "icon");
-  node.style.setProperty("--icon", `url("icons/${name}.svg")`);
   node.setAttribute("aria-hidden", "true");
+  const svgNode = iconSvgs.get(name);
+  if (svgNode) node.append(svgNode.cloneNode(true));
   return node;
 }
 
@@ -544,9 +571,11 @@ window.addEventListener("hashchange", () => {
   if (readHash()) loadFromHash();
 });
 
-renderPhases();
-loadFromHash();
-updateHash();
+loadIcons().then(() => {
+  renderPhases();
+  loadFromHash();
+  updateHash();
+});
 
 let tipSeen = false;
 try {
