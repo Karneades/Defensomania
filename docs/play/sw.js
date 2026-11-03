@@ -1,4 +1,4 @@
-lconst CACHE = "defensomania-play-v1";
+const CACHE = "defensomania-play-v1";
 const SHELL = [
   "./", "index.html", "style.css", "app.js", "icons.js", "cards-data.js", "icon.svg",
   ...["scenario", "prepare", "detect", "respond", "recover", "lessons-learned", "communication"].map(

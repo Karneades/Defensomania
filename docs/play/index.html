@@ -19,14 +19,19 @@
     </h1>
     <div class="controls">
       <a class="back" href="../" title="Back to the website">&larr;<span> Back to the website</span></a>
-      <button id="new-scenario" title="New scenario and hand (N)">New scenario + hand</button>
-      <button id="redeal" title="Redeal the hand (R)">Redeal hand</button>
-      <button id="pick-scenario" title="Choose a scenario (P)">Pick scenario</button>
-      <button id="play" title="Show the selected card large (Enter)" disabled>Play card</button>
-      <div class="more">
-        <button id="more" aria-label="More options" aria-haspopup="true" aria-expanded="false" aria-controls="more-menu">&hellip;</button>
-        <div id="more-menu" role="menu" hidden>
-          <button id="copy-link" role="menuitem" title="Copy a link to this exact deal (L)">Copy link</button>
+      <div class="dropdown">
+        <button id="new" aria-haspopup="true" aria-expanded="false" aria-controls="new-menu">New <span aria-hidden="true">&#9662;</span></button>
+        <div id="new-menu" class="menu" role="menu" hidden>
+          <button id="new-scenario" role="menuitem" title="New scenario and activities (N)">New scenario + activities</button>
+          <button id="redeal" role="menuitem" title="Redeal the activities (R)">Redeal activities</button>
+          <button id="pick-scenario" role="menuitem" title="Choose a scenario (P)">Pick scenario</button>
+        </div>
+      </div>
+      <button id="play" title="Select a card first, then show it large with the scenario (Enter)" disabled>Play card</button>
+      <div class="dropdown">
+        <button id="more" aria-haspopup="true" aria-expanded="false" aria-controls="more-menu">More <span aria-hidden="true">&#9662;</span></button>
+        <div id="more-menu" class="menu" role="menu" hidden>
+          <button id="copy-link" role="menuitem" title="Copy a link to this exact deal (L)">Share deal</button>
           <button id="cover" role="menuitem" aria-pressed="false" title="Hide the cards for hot-seat play (C)">Cover cards</button>
           <button id="theme" role="menuitem" title="Switch light/dark theme (T)">Theme</button>
           <button id="fullscreen" role="menuitem" title="Presentation mode (F)">Fullscreen</button>
@@ -36,7 +41,7 @@
   </header>
 
   <div id="tip" role="note" hidden>
-    <b>Tip:</b> open the &hellip; menu and choose <b>Copy link</b> to share these exact cards with others. Tap this note to dismiss.
+    <b>Tip:</b> open the <b>More</b> menu and choose <b>Share deal</b> to share these exact cards with others. Tap this note to dismiss.
   </div>
 
   <nav id="phases" class="phases" aria-label="Activity phases"></nav>
@@ -47,7 +52,7 @@
   </main>
 
   <footer>
-    <span class="keys">Keys: <b>N</b> new &middot; <b>R</b> redeal &middot; <b>P</b> pick scenario &middot; <b>1-0</b> select &middot; <b>Enter</b> play &middot; <b>C</b> cover &middot; <b>L</b> copy link &middot; <b>F</b> fullscreen &middot; <b>T</b> theme</span>
+    <span class="keys">Keys: <b>N</b> new &middot; <b>R</b> redeal &middot; <b>P</b> pick scenario &middot; <b>1-0</b> select &middot; <b>Enter</b> play &middot; <b>C</b> cover &middot; <b>L</b> share deal &middot; <b>F</b> fullscreen &middot; <b>T</b> theme</span>
     <span class="credits">
       <a href="https://github.com/Karneades/Defensomania">Defensomania</a> by Andreas Hunkeler
       (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).

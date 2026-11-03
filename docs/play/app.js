@@ -2,6 +2,7 @@ const HAND_SIZE = 10;
 const MAX_SWAPS = 3;
 const THEME_KEY = "defensomania-theme";
 const TIP_KEY = "defensomania-share-tip";
+const PLAYED_KEY = "defensomania-played";
 
 if (!window.CARDS) {
   document.querySelector("main").textContent =
@@ -279,6 +280,18 @@ function toggleSelect(pos) {
   if (state.covered) return;
   state.selected = state.selected === pos ? null : pos;
   syncHand();
+  if (state.selected !== null) hintPlay();
+}
+
+// Remind newcomers how to open a card until they have played one.
+function hintPlay() {
+  try {
+    if (localStorage.getItem(PLAYED_KEY)) return;
+  } catch {
+    // Storage blocked: keep showing the hint.
+  }
+  const touch = window.matchMedia("(hover: none)").matches;
+  toast(touch ? "Tap Play card to show it large with the scenario" : "Double-click the card (or press Enter) to show it large with the scenario", 3500);
 }
 
 function swapCard(pos) {
@@ -307,6 +320,12 @@ function promptFor(card) {
 
 function playSelected() {
   if (state.selected === null || state.covered || playDialog.open) return;
+  try {
+    localStorage.setItem(PLAYED_KEY, "1");
+  } catch {
+    // Storage can be blocked; the hint then simply shows again.
+  }
+  $("toast").classList.remove("show");
   const idx = state.hand[state.selected];
   const recap = el("p", "recap", scenarios[state.scenario].text);
   $("play-content").replaceChildren(recap, buildCard(idx, { big: true }), el("p", "prompt", promptFor(activities[idx])));
@@ -460,21 +479,31 @@ $("copy-link").addEventListener("click", copyLink);
 $("theme").addEventListener("click", toggleTheme);
 $("fullscreen").addEventListener("click", toggleFullscreen);
 
-const moreBtn = $("more");
-const moreMenu = $("more-menu");
-function setMenu(open) {
-  moreMenu.hidden = !open;
-  moreBtn.setAttribute("aria-expanded", String(open));
+const menus = [];
+function initMenu(btn, menu) {
+  const setMenu = (open) => {
+    menu.hidden = !open;
+    btn.setAttribute("aria-expanded", String(open));
+  };
+  btn.addEventListener("click", () => {
+    const open = menu.hidden;
+    for (const m of menus) m.close();
+    setMenu(open);
+  });
+  menu.addEventListener("click", () => setMenu(false));
+  menus.push({ btn, menu, close: () => setMenu(false) });
 }
-moreBtn.addEventListener("click", () => setMenu(moreMenu.hidden));
-moreMenu.addEventListener("click", () => setMenu(false));
+initMenu($("new"), $("new-menu"));
+initMenu($("more"), $("more-menu"));
 document.addEventListener("click", (e) => {
-  if (!e.target.closest(".more")) setMenu(false);
+  if (!e.target.closest(".dropdown")) for (const m of menus) m.close();
 });
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && !moreMenu.hidden) {
-    setMenu(false);
-    moreBtn.focus();
+  if (e.key !== "Escape") return;
+  for (const m of menus) {
+    if (m.menu.hidden) continue;
+    m.close();
+    m.btn.focus();
   }
 });
 // iPhones do not support the Fullscreen API.
