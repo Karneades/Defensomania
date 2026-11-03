@@ -218,7 +218,7 @@ function syncHand() {
   $("cover").setAttribute("aria-pressed", String(state.covered));
 }
 
-function renderPhases() {
+function phaseChips() {
   const all = state.phases.size === PHASES.length;
   const allChip = el("button", "chip", "All phases");
   allChip.type = "button";
@@ -235,7 +235,14 @@ function renderPhases() {
     chip.addEventListener("click", () => togglePhase(phase));
     return chip;
   });
-  phasesEl.replaceChildren(allChip, ...chips);
+  return [allChip, ...chips];
+}
+
+function renderPhases() {
+  phasesEl.replaceChildren(...phaseChips());
+  $("phases-menu").replaceChildren(...phaseChips());
+  const n = state.phases.size;
+  $("phases-count").textContent = n === PHASES.length ? "" : ` (${n})`;
 }
 
 /* Actions */
@@ -480,7 +487,7 @@ $("theme").addEventListener("click", toggleTheme);
 $("fullscreen").addEventListener("click", toggleFullscreen);
 
 const menus = [];
-function initMenu(btn, menu) {
+function initMenu(btn, menu, { keepOpen = false } = {}) {
   const setMenu = (open) => {
     menu.hidden = !open;
     btn.setAttribute("aria-expanded", String(open));
@@ -490,10 +497,12 @@ function initMenu(btn, menu) {
     for (const m of menus) m.close();
     setMenu(open);
   });
-  menu.addEventListener("click", () => setMenu(false));
+  // Rerendered chips are detached by the time the document handler runs, so stop the click here.
+  menu.addEventListener("click", (e) => (keepOpen ? e.stopPropagation() : setMenu(false)));
   menus.push({ btn, menu, close: () => setMenu(false) });
 }
 initMenu($("new"), $("new-menu"));
+initMenu($("phases-btn"), $("phases-menu"), { keepOpen: true });
 initMenu($("more"), $("more-menu"));
 document.addEventListener("click", (e) => {
   if (!e.target.closest(".dropdown")) for (const m of menus) m.close();

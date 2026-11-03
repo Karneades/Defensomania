@@ -46,6 +46,31 @@ h1 {
 
 .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
 
+/* Game buttons float in a pill */
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.3rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--panel);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+.bar > button,
+.bar .dropdown > button {
+  padding: 0.4rem 1rem;
+  border-color: transparent;
+  border-radius: 999px;
+  background: transparent;
+  font-weight: 600;
+}
+.bar > button:hover:not(:disabled),
+.bar .dropdown > button:hover,
+.bar > button:active,
+.bar .dropdown > button:active,
+.bar .dropdown > button[aria-expanded="true"] { background: var(--border); border-color: transparent; }
+
 button {
   padding: 0.4rem 0.8rem;
   border: 1px solid var(--border);
@@ -58,12 +83,19 @@ button {
 }
 button:hover:not(:disabled) { border-color: var(--accent); }
 button:disabled { opacity: 0.45; cursor: default; }
-#play:not(:disabled) { border-color: var(--accent); background: var(--accent); color: var(--bg); font-weight: 600; }
+#play:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+  box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 60%, transparent);
+}
 button[aria-pressed="true"]#cover { border-color: var(--accent); color: var(--accent); }
 button:focus-visible, .card:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
 .back {
-  margin-right: 0.4rem;
+  order: 1;
+  margin-left: 1.2rem;
   padding: 0.4rem 0.8rem;
   border: 1px solid var(--accent);
   border-radius: 6px;
@@ -77,23 +109,40 @@ button:focus-visible, .card:focus-visible, a:focus-visible { outline: 3px solid 
 /* Dropdown menus */
 .dropdown { position: relative; }
 .menu {
+  --menu-shift: -8px;
   position: absolute;
-  top: calc(100% + 0.3rem);
+  top: calc(100% + 0.6rem);
   right: 0;
   z-index: 10;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-  min-width: 10rem;
+  gap: 0.15rem;
+  min-width: 12rem;
   padding: 0.4rem;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 22px;
   background: var(--panel);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  transform-origin: top center;
+  animation: menu-in 0.15s ease-out;
 }
 #new-menu { right: auto; left: 0; }
+#phases-menu { right: auto; left: 0; }
+.phases-dropdown { display: none; }
 .menu[hidden] { display: none; }
-.menu button { text-align: left; }
+.menu button {
+  padding: 0.5rem 0.9rem;
+  border-color: transparent;
+  border-radius: 16px;
+  background: transparent;
+  text-align: left;
+}
+.menu button:hover:not(:disabled),
+.menu button:active { background: var(--border); border-color: transparent; }
+.menu .chip { justify-content: flex-start; gap: 0.6rem; font-weight: 600; }
+.menu .chip .icon { color: var(--c); }
+.menu .chip[aria-pressed="true"] { background: var(--c); color: #fff; }
+.menu .chip[aria-pressed="true"] .icon { color: #fff; }
 
 /* Sharing tip */
 #tip {
@@ -284,11 +333,14 @@ footer b { font-weight: 700; }
 @keyframes flip {
   from { opacity: 0; transform: rotateY(90deg); }
 }
+@keyframes menu-in {
+  from { opacity: 0; transform: translateY(var(--menu-shift)) scale(0.97); }
+}
 .activity.deal { animation: deal 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) backwards; animation-delay: calc(var(--i, 0) * 60ms); }
 .scenario.flip { animation: flip 0.4s ease-out backwards; }
 
 @media (prefers-reduced-motion: reduce) {
-  .activity.deal, .scenario.flip { animation: none; }
+  .activity.deal, .scenario.flip, .menu { animation: none !important; }
   * { transition: none !important; }
 }
 
@@ -371,13 +423,34 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.65); }
 
 /* Phones: tighter header, single-row scrolling phase filter */
 @media (max-width: 600px) {
-  header { padding: 0.4rem 0.6rem 0.2rem; gap: 0.3rem; }
-  #tip { margin: 0.2rem 0.6rem; }
+  header { padding: 0.4rem 1.2rem 0.2rem; gap: 0.3rem; }
+  #tip { margin: 0.2rem 1.2rem; }
   h1 { font-size: 1.1rem; }
-  .controls { gap: 0.3rem; }
-  .controls button, .back { padding: 0.35rem 0.6rem; font-size: 0.8rem; }
-  .back { margin-right: 0; }
-  .back span { display: none; }
-  .phases { flex-wrap: nowrap; overflow-x: auto; padding: 0.2rem 0.6rem 0.4rem; scrollbar-width: none; }
-  .chip { flex: none; }
+  .back { padding: 0.35rem 0.6rem; font-size: 0.8rem; }
+  .phases { display: none; }
+  .phases-dropdown { display: block; }
+
+  /* Game bar floats at the bottom; no transform/filter here, it would trap the fixed .back link */
+  body { padding-bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
+  .bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: calc(0.8rem + env(safe-area-inset-bottom));
+    z-index: 20;
+    width: fit-content;
+    max-width: calc(100% - 1rem);
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 0.35rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+  .bar > button,
+  .bar .dropdown > button { min-height: 2.75rem; padding: 0.35rem 0.9rem; font-size: 0.9rem; }
+  /* Website link stays in the header, away from the game buttons */
+  .back { position: fixed; top: 0.5rem; right: 1.2rem; margin: 0; }
+  .menu { --menu-shift: 8px; top: auto; bottom: calc(100% + 0.9rem); transform-origin: bottom center; }
+  .menu button { min-height: 2.75rem; font-size: 0.95rem; }
+  #toast { bottom: calc(6.5rem + env(safe-area-inset-bottom)); }
 }

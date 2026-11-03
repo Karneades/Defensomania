@@ -18,7 +18,8 @@
       Defensomania
     </h1>
     <div class="controls">
-      <a class="back" href="../" title="Back to the website">&larr;<span> Back to the website</span></a>
+      <a class="back" href="../" title="Go to the website">Go to website</a>
+      <div class="bar">
       <div class="dropdown">
         <button id="new" aria-haspopup="true" aria-expanded="false" aria-controls="new-menu">New <span aria-hidden="true">&#9662;</span></button>
         <div id="new-menu" class="menu" role="menu" hidden>
@@ -26,6 +27,10 @@
           <button id="redeal" role="menuitem" title="Redeal the activities (R)">Redeal activities</button>
           <button id="pick-scenario" role="menuitem" title="Choose a scenario (P)">Pick scenario</button>
         </div>
+      </div>
+      <div class="dropdown phases-dropdown">
+        <button id="phases-btn" aria-haspopup="true" aria-expanded="false" aria-controls="phases-menu">Phases<span id="phases-count"></span> <span aria-hidden="true">&#9662;</span></button>
+        <div id="phases-menu" class="menu" role="group" aria-label="Activity phases" hidden></div>
       </div>
       <button id="play" title="Select a card first, then show it large with the scenario (Enter)" disabled>Play card</button>
       <div class="dropdown">
@@ -36,6 +41,7 @@
           <button id="theme" role="menuitem" title="Switch light/dark theme (T)">Theme</button>
           <button id="fullscreen" role="menuitem" title="Presentation mode (F)">Fullscreen</button>
         </div>
+      </div>
       </div>
     </div>
   </header>
