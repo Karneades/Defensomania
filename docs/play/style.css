@@ -431,25 +431,25 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.65); }
   .phases-dropdown { display: block; }
 
   /* Game bar floats at the bottom */
-  body { padding-bottom: calc(4.5rem + env(safe-area-inset-bottom)); }
+  body { padding-bottom: calc(3.75rem + env(safe-area-inset-bottom)); }
   .bar {
     position: fixed;
     left: 0;
     right: 0;
-    bottom: calc(0.4rem + env(safe-area-inset-bottom));
+    bottom: calc(0.25rem + env(safe-area-inset-bottom));
     z-index: 20;
     width: fit-content;
     max-width: calc(100% - 1rem);
     margin: 0 auto;
     flex-wrap: nowrap;
     justify-content: center;
-    padding: 0.25rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    padding: 0.2rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
   }
   .bar > button,
-  .bar .dropdown > button { min-height: 2.5rem; padding: 0.3rem 0.75rem; font-size: 0.85rem; }
+  .bar .dropdown > button { min-height: 2.25rem; padding: 0.2rem 0.6rem; font-size: 0.8rem; }
   .back { margin: 0; }
-  .menu { --menu-shift: 8px; top: auto; bottom: calc(100% + 0.6rem); transform-origin: bottom center; }
+  .menu { --menu-shift: 8px; top: auto; bottom: calc(100% + 0.5rem); transform-origin: bottom center; }
   .menu button { min-height: 2.5rem; font-size: 0.9rem; }
-  #toast { bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
+  #toast { bottom: calc(4.75rem + env(safe-area-inset-bottom)); }
 }
