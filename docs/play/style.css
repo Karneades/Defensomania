@@ -442,6 +442,8 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.65); }
   .scenario { max-height: 38dvh; }
   .hand { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: minmax(9rem, auto); }
   .keys { display: none; }
+  /* iOS Safari repaints masked elements late while scrolling under sticky layers; give them their own layer */
+  .icon { transform: translateZ(0); }
 }
 
 /* Phones: tighter header, single-row scrolling phase filter */
