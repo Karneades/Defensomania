@@ -426,31 +426,30 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.65); }
   header { padding: 0.4rem 1.2rem 0.2rem; gap: 0.3rem; }
   #tip { margin: 0.2rem 1.2rem; }
   h1 { font-size: 1.1rem; }
-  .back { padding: 0.35rem 0.6rem; font-size: 0.8rem; }
+  .back { padding: 0.32rem 0.6rem; font-size: 0.8rem; }
   .phases { display: none; }
   .phases-dropdown { display: block; }
 
-  /* Game bar floats at the bottom; no transform/filter here, it would trap the fixed .back link */
-  body { padding-bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
+  /* Game bar floats at the bottom */
+  body { padding-bottom: calc(4.5rem + env(safe-area-inset-bottom)); }
   .bar {
     position: fixed;
     left: 0;
     right: 0;
-    bottom: calc(0.8rem + env(safe-area-inset-bottom));
+    bottom: calc(0.4rem + env(safe-area-inset-bottom));
     z-index: 20;
     width: fit-content;
     max-width: calc(100% - 1rem);
     margin: 0 auto;
     flex-wrap: nowrap;
     justify-content: center;
-    padding: 0.35rem;
+    padding: 0.25rem;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   }
   .bar > button,
-  .bar .dropdown > button { min-height: 2.75rem; padding: 0.35rem 0.9rem; font-size: 0.9rem; }
-  /* Website link stays in the header, away from the game buttons */
-  .back { position: fixed; top: 0.5rem; right: 1.2rem; margin: 0; }
-  .menu { --menu-shift: 8px; top: auto; bottom: calc(100% + 0.9rem); transform-origin: bottom center; }
-  .menu button { min-height: 2.75rem; font-size: 0.95rem; }
-  #toast { bottom: calc(6.5rem + env(safe-area-inset-bottom)); }
+  .bar .dropdown > button { min-height: 2.5rem; padding: 0.3rem 0.75rem; font-size: 0.85rem; }
+  .back { margin: 0; }
+  .menu { --menu-shift: 8px; top: auto; bottom: calc(100% + 0.6rem); transform-origin: bottom center; }
+  .menu button { min-height: 2.5rem; font-size: 0.9rem; }
+  #toast { bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
 }
