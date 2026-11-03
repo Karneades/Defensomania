@@ -61,8 +61,11 @@ async function loadIcons() {
     names.map(async (name) => {
       try {
         const res = await fetch(`icons/${name}.svg`);
-        const root = new DOMParser().parseFromString(await res.text(), "image/svg+xml").documentElement;
-        if (!res.ok || root.localName !== "svg") return;
+        // The HTML parser skips the XML prolog and DOCTYPE; Safari's XML parser rejects the iso-8859-1 declaration.
+        const tpl = document.createElement("template");
+        tpl.innerHTML = await res.text();
+        const root = tpl.content.querySelector("svg");
+        if (!res.ok || !root) return;
         for (const attr of ["width", "height", "style", "x", "y"]) root.removeAttribute(attr);
         for (const node of root.querySelectorAll("[style], [fill]")) {
           node.removeAttribute("style");
@@ -545,6 +548,12 @@ document.addEventListener("keydown", (e) => {
 if (!document.documentElement.requestFullscreen) $("fullscreen").hidden = true;
 
 /* Start */
+
+// The sticky scenario must stick exactly at the header's bottom edge, or it jumps when scrolling starts.
+const headerEl = document.querySelector("header");
+new ResizeObserver(() => {
+  document.documentElement.style.setProperty("--header-h", `${headerEl.getBoundingClientRect().height}px`);
+}).observe(headerEl);
 
 function loadFromHash() {
   const shared = readHash();

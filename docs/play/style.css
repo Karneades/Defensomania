@@ -412,7 +412,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.65); }
 .scenario-wrap { display: contents; }
 @media (max-width: 900px) {
   body { height: auto; min-height: 100dvh; }
-  /* Slightly under the real header height so the scenario tucks beneath it without a gap (CSP forbids setting this from JS) */
+  /* Fallback; app.js sets the measured header height so the scenario does not shift when it sticks */
   :root { --header-h: 2.9rem; }
   header { position: sticky; top: 0; z-index: 15; background: var(--bg); }
   /* Block layout: a grid row would end with the scenario and leave nothing to stick across */
