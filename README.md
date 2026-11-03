@@ -9,7 +9,7 @@ game. Your web server is compromised: which steps do you take first? Malware
 ran on an endpoint and shortly after you see data leaving for a remote server:
 what are your priorities?
 
-**Website: https://karneades.github.io/Defensomania/**
+Visit the [website](https://karneades.github.io/Defensomania/) or play it [online](https://karneades.github.io/Defensomania/play/).
 
 Play Defensomania with the provided scenarios to train defenders and to
 discuss activities and their priorities. _How would you implement those
