@@ -261,7 +261,6 @@ footer b { font-weight: 700; }
   border: 3px solid var(--c);
   background: var(--paper);
   color: var(--fg);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: transform 0.15s, box-shadow 0.2s, opacity 0.2s;
 }
@@ -412,6 +411,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.65); }
 #toast.show { opacity: 1; transform: translate(-50%, 0); }
 
 /* Small screens: stack and scroll */
+.scenario-wrap { display: contents; }
 @media (max-width: 900px) {
   body { height: auto; min-height: 100dvh; }
   /* Slightly under the real header height so the scenario tucks beneath it without a gap (CSP forbids setting this from JS) */
@@ -419,29 +419,27 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.65); }
   header { position: sticky; top: 0; z-index: 15; background: var(--bg); }
   /* Block layout: a grid row would end with the scenario and leave nothing to stick across */
   main { display: block; }
-  /* Opaque backing for the scenario's rounded top corners, so cards don't show through them */
-  main::before {
-    content: "";
+  /* The opaque wrapper backs the scenario's rounded corners, so cards never show through them */
+  .scenario-wrap {
     display: block;
     position: sticky;
     top: var(--header-h, 0px);
-    z-index: 4;
-    height: 1rem;
-    margin-bottom: -1rem;
+    z-index: 5;
+    margin-bottom: 0.8rem;
     background: var(--bg);
   }
-  .scenario {
-    position: sticky;
-    top: var(--header-h, 0px);
-    z-index: 5;
-    max-height: 38dvh;
-    margin-bottom: 0.8rem;
-    /* Stacked translucent shadows fade out cards scrolling beneath the scenario */
-    --fade: color-mix(in srgb, var(--bg) 11%, transparent);
-    box-shadow:
-      0 0.3rem 0 var(--fade), 0 0.55rem 0 var(--fade), 0 0.8rem 0 var(--fade), 0 1.05rem 0 var(--fade), 0 1.3rem 0 var(--fade),
-      0 1.55rem 0 var(--fade), 0 1.8rem 0 var(--fade), 0 2.05rem 0 var(--fade), 0 2.3rem 0 var(--fade);
+  /* Soft edge so cards fade out under the scenario instead of being cut off */
+  .scenario-wrap::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 3rem;
+    pointer-events: none;
+    background: linear-gradient(var(--bg), color-mix(in srgb, var(--bg) 45%, transparent) 40%, transparent);
   }
+  .scenario { max-height: 38dvh; }
   .hand { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: minmax(9rem, auto); }
   .keys { display: none; }
 }
