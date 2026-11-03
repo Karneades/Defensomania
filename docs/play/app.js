@@ -148,7 +148,6 @@ function buildCard(idx, { pos = null, big = false } = {}) {
   hd.append(icon(slug(card.phase)));
   hd.append(el("span", "", card.phase));
   if (isJoker(card)) hd.append(el("span", "tag", "Joker"));
-  if (pos !== null) hd.append(el("span", "num", String((pos + 1) % 10)));
   node.append(hd, el("div", "body", card.text));
   return node;
 }

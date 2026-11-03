@@ -281,7 +281,6 @@ footer b { font-weight: 700; }
   border-radius: 4px;
   font-size: 0.65rem;
 }
-.activity .num { margin-left: auto; opacity: 0.8; font-variant-numeric: tabular-nums; }
 
 .activity .body {
   flex: 1;
