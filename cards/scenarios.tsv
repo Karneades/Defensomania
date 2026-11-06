@@ -48,3 +48,19 @@ Scenario	You were informed that your firewalls were compromised and malware was 
 Scenario	Some VPN access credentials were exposed externally. You risk the potential abuse of the credentials.	
 Scenario	After VPN access credentials from an employee were exposed externally, suspicious sign-ins happened.	
 Scenario	Your VPN gateway was compromised after a recent 0-day was not patched.	
+Scenario	An employee approves an MFA push at 3 a.m. after receiving dozens of prompts. The attacker now reads their mailbox and SharePoint.	
+Scenario	Someone calls the helpdesk posing as an executive and gets their MFA device reset. A new device was enrolled minutes later.	
+Scenario	Your CFO joins a video call with "the CEO" and wires money on request. The voice and video were deepfakes.	
+Scenario	A leaked cloud access key was used to start hundreds of GPU instances for crypto mining. The bill is growing by the hour.	
+Scenario	Several file servers and hypervisors were encrypted over the weekend. Backups were deleted first, and the ransom note threatens to publish stolen data.	
+Scenario	A QR code in a fake "payroll update" email led staff to a credential-harvesting page. Dozens of employees scanned it on their private phones.	
+Scenario	An administrator of your managed service provider was compromised. The attackers use the provider's remote access tool to reach your customer networks.	
+Scenario	Your Kerberos service accounts are being cracked offline. Weak service account passwords were used to gain domain admin.	
+Scenario	A forgotten DNS entry pointing to a decommissioned cloud service was taken over. It now hosts a phishing page on your subdomain.	
+Scenario	A departing employee copied thousands of customer records to a personal cloud drive the week before leaving.	
+Scenario	A malicious container image in your Kubernetes cluster runs a reverse shell. The pod can read secrets from other namespaces.	
+Scenario	A developer pasted proprietary source code and customer data into a public AI chatbot. The chat history is shareable by link.	
+Scenario	Your VPN appliance has a critical zero-day that is actively exploited. No patch exists yet, and the device has been exposed for weeks.	
+Scenario	A wiper disguised as ransomware is destroying domain controllers and endpoints. Paying the ransom would not recover anything.	
+Scenario	A stolen, unencrypted laptop of a board member contains confidential merger documents. It was lost in a taxi two days ago.	
+Scenario	A mailbox rule silently forwards invoices to an external address. Suppliers just reported changed bank details on your payment requests.	

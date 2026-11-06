@@ -23,6 +23,11 @@ Prepare	Ensure collaboration between SOC and CSIRT and clarify responsibilities 
 Prepare	Build backup infrastructure for emergencies	
 Prepare	Perform regular threat hunting	
 Prepare	Implement detection for sensitive data indexed by public search engines	
+Prepare	Enforce phishing-resistant MFA for privileged and remote access	
+Prepare	Keep offline or immutable backups and test restores regularly	
+Prepare	Maintain an asset and software inventory with owners	
+Prepare	Define legal, insurance and external IR retainer contacts before an incident	
+Prepare	Run tabletop exercises with management and legal	
 Prepare	Joker - invent a new preparation step	
 Prepare	Joker - invent a new preparation step	
 Prepare	Joker - invent a new preparation step	
@@ -56,6 +61,14 @@ Detect	Detect in-memory malware on a remote host
 Detect	Check GDPR relevance	
 Detect	Find the attacker through their real IP, leaked by bad OPSEC	
 Detect	Correlate application grants, service principal activity and mailbox audit events to tell delegated access from normal sign-ins	Hiago Kin Levi
+Detect	Detect Kerberoasting through unusual service ticket requests	
+Detect	Detect MFA fatigue through repeated push prompts and approvals	
+Detect	Detect new inbox rules that forward or delete mail	
+Detect	Detect beaconing and DNS tunneling in network logs	
+Detect	Detect abnormal cloud API activity and new access keys	
+Detect	Detect mass downloads or uploads by a single user	
+Detect	Detect deletion or tampering of backups and shadow copies	
+Detect	Detect subdomain takeover by reviewing dangling DNS entries	
 Detect	Joker - invent a new detection method	
 Detect	Joker - invent a new detection method	
 Detect	Joker - invent a new detection method	
@@ -95,6 +108,15 @@ Respond	Create a GDPR notification
 Respond	Document indicators of attack and compromise centrally	
 Respond	Share indicators of attack and compromise with the community	
 Respond	Revoke the malicious application's grant and sessions, record identifiers and audit evidence as urgency permits, and verify that access has stopped	Hiago Kin Levi
+Respond	Revoke active sessions and refresh tokens of a compromised account	
+Respond	Remove malicious inbox rules and mail forwarding	
+Respond	Snapshot a cloud instance before terminating it	
+Respond	Disable and rotate leaked cloud access keys	
+Respond	Isolate a container or pod and preserve its image for analysis	
+Respond	Reset the krbtgt account password twice	
+Respond	Quarantine a malicious email campaign from all mailboxes	
+Respond	Verify supplier bank detail changes through a known phone number	
+Respond	Remote wipe a lost or stolen device	
 Respond	Joker - invent a new respond action	
 Respond	Joker - invent a new respond action	
 Respond	Joker - invent a new respond action	
@@ -109,6 +131,10 @@ Recover	Change credentials of a compromised service account that was disabled du
 Recover	Implement long-term monitoring through new detection use cases and incident response processes	
 Recover	Add an identified security gap to the policy framework	
 Recover	Test the restoration in an isolated environment and validate monitoring before returning the service to its agreed scope	Hiago Kin Levi
+Recover	Rebuild Active Directory from a trusted backup and re-validate trust	
+Recover	Re-enroll MFA devices after identity verification	
+Recover	Review and clean up cloud permissions and unused service principals	
+Recover	Run a post-recovery threat hunt for attacker persistence before go-live	
 Recover	Joker - invent a new recover action	
 Recover	Joker - invent a new recover action	
 Recover	Joker - invent a new recover action	
@@ -119,6 +145,9 @@ Lessons Learned	Improve incident response processes
 Lessons Learned	Improve incident detection capabilities	
 Lessons Learned	Add new detection rules to internal and external repositories	
 Lessons Learned	Record time boundaries, missing telemetry and uncertainty behind response metrics before comparing exercise results	Hiago Kin Levi
+Lessons Learned	Review which logs were missing and add them to central collection	
+Lessons Learned	Update the risk register with the attack path and its root cause	
+Lessons Learned	Turn the attacker's techniques into a purple-team test	
 Lessons Learned	Joker - invent a new lessons learned step	
 Lessons Learned	Joker - invent a new lessons learned step	
 Lessons Learned	Joker - invent a new lessons learned step	
@@ -128,6 +157,11 @@ Communication	Inform the public relations department about possible questions fr
 Communication	Communicate findings to management	
 Communication	Create an incident report	
 Communication	Write a reply to a request made on an external platform	
+Communication	Notify legal counsel, cyber insurance and the data protection officer	
+Communication	Report to the regulator within legal deadlines	
+Communication	Inform affected customers and partners with clear guidance	
+Communication	Contact law enforcement and the national CERT	
+Communication	Brief the helpdesk and staff about the ongoing social engineering attempt	
 Communication	Joker - invent a new communication channel	
 Communication	Joker - invent a new communication channel	
 Communication	Joker - invent a new communication channel	
