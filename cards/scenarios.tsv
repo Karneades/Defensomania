@@ -50,10 +50,10 @@ Scenario	After VPN access credentials from an employee were exposed externally, 
 Scenario	Your VPN gateway was compromised after a recent 0-day was not patched.	
 Scenario	An employee approves an MFA push at 3 a.m. after receiving dozens of prompts. The attacker now reads their mailbox and SharePoint.	
 Scenario	Someone calls the helpdesk posing as an executive and gets their MFA device reset. A new device was enrolled minutes later.	
-Scenario	Your CFO joins a video call with "the CEO" and wires money on request. The voice and video were deepfakes.	
+Scenario	Your CFO joins a video call with 'the CEO' and wires money on request. The voice and video were deepfakes.	
 Scenario	A leaked cloud access key was used to start hundreds of GPU instances for crypto mining. The bill is growing by the hour.	
 Scenario	Several file servers and hypervisors were encrypted over the weekend. Backups were deleted first, and the ransom note threatens to publish stolen data.	
-Scenario	A QR code in a fake "payroll update" email led staff to a credential-harvesting page. Dozens of employees scanned it on their private phones.	
+Scenario	A QR code in a fake 'payroll update' email led staff to a credential-harvesting page. Dozens of employees scanned it on their private phones.	
 Scenario	An administrator of your managed service provider was compromised. The attackers use the provider's remote access tool to reach your customer networks.	
 Scenario	Your Kerberos service accounts are being cracked offline. Weak service account passwords were used to gain domain admin.	
 Scenario	A forgotten DNS entry pointing to a decommissioned cloud service was taken over. It now hosts a phishing page on your subdomain.	
