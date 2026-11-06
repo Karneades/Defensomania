@@ -45,3 +45,6 @@ Scenario	You allow customers to upload sensitive information to your platform to
 Scenario	You were informed that one of your website directories used to share files with external parties was readable and writable by anyone. Suspicious files were found.	https://krebsonsecurity.com/2019/05/whats-behind-the-wolters-kluwer-tax-outage/
 Scenario	You were informed that your MDM solution was compromised and over 75% of your employees' mobile devices are infected with malware.	https://research.checkpoint.com/2020/mobile-as-attack-vector-using-mdm/
 Scenario	You were informed that your firewalls were compromised and malware was executed on these devices to steal information.	https://news.sophos.com/en-us/2020/04/26/asnarok/
+Scenario	Some VPN access credentials were exposed externally. You risk the potential abuse of the credentials.	
+Scenario	After VPN access credentials from an employee were exposed externally, suspicious sign-ins happened.	
+Scenario	Your VPN gateway was compromised after a recent 0-day was not patched quickly. Suspcicious network connections were made originating from the VPN gateway.	
