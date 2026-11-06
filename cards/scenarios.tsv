@@ -47,4 +47,4 @@ Scenario	You were informed that your MDM solution was compromised and over 75% o
 Scenario	You were informed that your firewalls were compromised and malware was executed on these devices to steal information.	https://news.sophos.com/en-us/2020/04/26/asnarok/
 Scenario	Some VPN access credentials were exposed externally. You risk the potential abuse of the credentials.	
 Scenario	After VPN access credentials from an employee were exposed externally, suspicious sign-ins happened.	
-Scenario	Your VPN gateway was compromised after a recent 0-day was not patched quickly. Suspcicious network connections were made originating from the VPN gateway.	
+Scenario	Your VPN gateway was compromised after a recent 0-day was not patched.	
